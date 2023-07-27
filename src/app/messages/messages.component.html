@@ -4,8 +4,8 @@
     <div *ngFor="let message of messageService.messages">{{message}}</div>
 </div> -->
 <div *ngIf="selectedHero !== undefined">
-    <p>
-        <span>{{selectedHero.name}}</span>
+    <p class="message-text">
+        <span>{{selectedHero.name |  uppercase}}</span>
         is my Hero!
     </p>
     <button [routerLink] = "['/heroes', selectedHero.id]">View Details</button>
