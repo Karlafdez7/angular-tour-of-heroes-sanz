@@ -7,8 +7,11 @@
   list-style-type: none
   padding: 0
   width: 15em
+  display: flex
+  flex-direction: column
 
-.heroes li 
+.heroes a 
+  text-decoration: none
   cursor: pointer
   position: relative
   left: 0
@@ -18,11 +21,11 @@
   height: 1.6em
   border-radius: 4px
 
-.heroes li.selected:hover 
+.heroes a.selected:hover 
   background-color: #BBD8DC !important
   color: white
 
-.heroes li:hover 
+.heroes a:hover 
   color: #607D8B
   background-color: #DDD
   left: .1em
