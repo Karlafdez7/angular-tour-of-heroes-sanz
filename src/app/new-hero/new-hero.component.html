@@ -4,7 +4,8 @@
     <button type="submit">Agregar Héroe</button>
 </form> -->
 
-<div>
+<form>
+    <label class="form-label"> Who is your favorite hero?</label>
     <input [(ngModel)] = 'newHeroName' placeholder="New Hero">
     <button (click)='addHero()'>Add</button>
-</div>
+</form>

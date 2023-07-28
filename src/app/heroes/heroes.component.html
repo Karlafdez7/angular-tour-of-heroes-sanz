@@ -1,17 +1,19 @@
-<main>
-    <h2 class="heroes-title">My Heroes</h2>
-    <ul class="heroes-list">
-        <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-            <span class="badge"> {{hero.id}}</span>
-            <span class="heroes-name">{{hero.name}}</span>
-            <i (click)="deleteHero(hero)" class="fa-regular fa-rectangle-xmark"></i>
-        </li>
-    </ul>
+<section class="section-heroes">
+    <section class="heroes">
+        <h2 class="heroes-title">My Heroes</h2>
+        <ul class="heroes-list">
+            <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+                <span class="badge"> {{hero.id}}</span>
+                <span class="heroes-name">{{hero.name}}</span>
+                <i (click)="deleteHero(hero)" class="fa-regular fa-rectangle-xmark"></i>
+            </li>
+        </ul>
+    </section>
 
-    <app-messages [selectedHero]="selectedHero"></app-messages>
+    <app-messages class="message-detail" [selectedHero]="selectedHero"></app-messages>
 
-    <app-new-hero></app-new-hero>
-</main>
+    <app-new-hero class="new-hero"></app-new-hero>
+</section>
 
 
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

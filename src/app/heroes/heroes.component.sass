@@ -1,4 +1,4 @@
-main
+.section-heroes
   grid-row: 2/3
 
 .heroes-title
@@ -63,9 +63,30 @@ main
   color: grey
 
 
+@media (min-width:768px)
+  .section-heroes
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr 1fr 
+    align-items: center
+  
+  .heroes
+    grid-column: 1/2
+    grid-row: 1/3
+  
+  .message-detail
+    grid-column: 2/3
+    grid-row:2/3
+  
+  .new-hero
+    grid-column: 2/3
+    grid-row: 1/2
 
+  .heroes-list li, .heroes-list .badge  
+    height: 2.1em
 
-
+  .fa-regular
+    font-size: 25px
 
 // .selected 
 //   background-color: #CFD8DC !important
