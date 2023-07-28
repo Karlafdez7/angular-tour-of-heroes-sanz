@@ -34,5 +34,4 @@ export class HeroesComponent implements OnInit {
       this.heroService.deleteHero(hero);
     }
   }
-  
 }

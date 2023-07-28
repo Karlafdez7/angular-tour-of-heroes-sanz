@@ -1,66 +1,67 @@
 .section-heroes
   grid-row: 2/3
 
-.heroes-title
-  font-size:20px
+.heroes
+  
+  &-title
+    font-size:20px
+
+  &-list
+    list-style-type: none
+    padding: 0
+    width: 15em
+    display: flex
+    flex-direction: column
+
+    &_item
+      text-decoration: none
+      cursor: pointer
+      position: relative
+      left: 0
+      background-color: #EEE
+      margin: .5em
+      height: 2.5em
+      border-radius: 4px
+      color: rgb(148,148,148)
+      display: flex
+      align-items: center
+
+      &:hover 
+        color: #607D8B
+        background-color: #DDD
+        left: .1em
+
+.item
+  &-badge
+    display: inline-block
+    font-size: 18px
+    color: white
+    padding: 0.6em 0.7em 0 0.7em
+    background-color: #607D8B
+    height: 100%
+    margin-right: .8em
+    border-radius: 4px 0 0 4px
+  
+  &-name
+    font-size: 18px
+
+  &-icon
+    position: absolute
+    right: 0
+    top: 0
+    font-size: 26px
+    color: grey
+
+.heroes-list_item:hover .item-icon
+  color: rgb(6, 92, 64)
 
 .selected 
   background-color: #CFD8DC !important
-  color: white
-
-.heroes-list
-  list-style-type: none
-  padding: 0
-  width: 15em
-  display: flex
-  flex-direction: column
-
-.heroes-list li 
-  text-decoration: none
-  cursor: pointer
-  position: relative
-  left: 0
-  background-color: #EEE
-  margin: .5em
-  padding: .3em 0
-  height: 1.6em
-  border-radius: 4px
-  color: rgb(148,148,148)
-  font-size: 16px
-  display: flex
-
-.heroes-list li.selected:hover 
-  background-color: #BBD8DC !important
-  color: white
-
-.heroes-list li:hover 
-  color: #607D8B
-  background-color: #DDD
-  left: .1em
-
-.heroes-name
-  padding-bottom: 10px
-
-.heroes-list .badge 
-  display: inline-block
-  font-size: 16px
-  color: white
-  padding: 0.3em 0.7em 0 0.7em
-  background-color: #607D8B
-  line-height: 1em
-  position: relative
-  left: -1px
-  top: -4px
-  height: 1.6em
-  margin-right: .8em
-  border-radius: 4px 0 0 4px
-
-.fa-regular
-  position: absolute
-  right: 0
-  top: 0
-  font-size: 23px
-  color: grey
+  color: white  
+  
+  &:hover
+    background-color: #BBD8DC !important
+    color: white  
 
 
 @media (min-width:768px)
@@ -82,10 +83,7 @@
     grid-column: 2/3
     grid-row: 1/2
 
-  .heroes-list li, .heroes-list .badge  
-    height: 2.1em
-
-  .fa-regular
+  .item-icon
     font-size: 25px
 
 @media (min-width:1024px)
@@ -98,79 +96,3 @@
     display: grid
     grid-template-columns: 1fr 1fr
     grid-template-rows: repeat(auto-fit,minmax(30px,1fr))
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // .selected 
-  //   background-color: #CFD8DC !important
-  //   color: white
-
-  // .heroes 
-  //   margin: 0 0 2em 0
-  //   list-style-type: none
-  //   padding: 0
-  //   width: 15em
-  //   display: flex
-  //   flex-direction: column
-
-  // .heroes li 
-  //   text-decoration: none
-  //   cursor: pointer
-  //   position: relative
-  //   left: 0
-  //   background-color: #EEE
-  //   margin: .5em
-  //   padding: .3em 0
-  //   height: 1.6em
-  //   border-radius: 4px
-  //   color: rgb(148,148,148)
-  //   font-size: 18px
-
-  // .heroes li.selected:hover 
-  //   background-color: #BBD8DC !important
-  //   color: white
-
-  // .heroes li:hover 
-  //   color: #607D8B
-  //   background-color: #DDD
-  //   left: .1em
-
-  // .heroes .text 
-  //   position: relative
-  //   top: -3px
-
-  // .heroes .badge 
-  //   display: inline-block
-  //   font-size: 16px
-  //   color: white
-  //   padding: 0.8em 0.7em 0 0.7em
-  //   background-color: #607D8B
-  //   line-height: 1em
-  //   position: relative
-  //   left: -1px
-  //   top: -4px
-  //   height: 1.6em
-  //   margin-right: .8em
-  //   border-radius: 4px 0 0 4px
-
-  // .fa-regular
-  //   position: absolute
-  //   right: 0
-  //   top: 0
-  //   font-size: 23px
-  //   color: grey

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {NewHero} from './new-hero.model';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -11,11 +10,6 @@ export class NewHeroComponent {
   newHeroName: string = '';
 
   constructor(private heroService: HeroService) {}
-
-  // onSubmit(): void{
-  //   this.heroService.addHero(this.newHero).subscribe(hero => hero.name);
-  //   this.newHero = { id: 0 , name: ''}
-  //}
 
   addHero() : void {
     if(this.newHeroName.trim()) {

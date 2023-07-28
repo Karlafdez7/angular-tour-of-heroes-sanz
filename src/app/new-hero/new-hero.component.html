@@ -1,11 +1,5 @@
-<!-- <form (submit)="onSubmit()">
-    <label for="heroName">Nombre del Héroe:</label>
-    <input type="text" id="heroName" [(ngModel)]="newHero.name" name="name" required>
-    <button type="submit">Agregar Héroe</button>
-</form> -->
-
 <div class="form">
     <label class="form-label"> Who is your favorite hero?</label>
-    <input [(ngModel)] = 'newHeroName' placeholder="New Hero">
-    <button (click)='addHero()'>Add</button>
+    <input class="form-input" [(ngModel)] = 'newHeroName' placeholder="New Hero">
+    <button class="form-button" (click)='addHero()'>Add</button>
 </div>

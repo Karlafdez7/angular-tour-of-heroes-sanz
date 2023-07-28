@@ -1,20 +1,22 @@
-.dashboard-title
-  text-align: center
-  font-size:22px
-  margin: 15px 0
+.dashboard
+  
+  &-title
+    text-align: center
+    font-size:22px
+    margin: 15px 0
 
-.dashboard-nav
-  height: 60%
-  display: grid
-  grid-template-rows: repeat(5,1fr)
-  align-items: center
-  justify-content: center
+  &-nav
+    height: 60%
+    display: grid
+    grid-template-rows: repeat(5,1fr)
+    align-items: center
+    justify-content: center
 
-  &_link
-    min-width: 55%
-    height: 75px
-    padding-right: 0
-    text-decoration: none
+    &_link
+      min-width: 55%
+      height: 75px
+      padding-right: 0
+      text-decoration: none
 
 .module 
   font-size: 14px
@@ -26,7 +28,10 @@
   max-height: 120px
   min-width: 120px
 
-
+  &:hover 
+    background-color: #eee
+    cursor: pointer
+    color: #607d8b
 
 @media (min-width: 768px) 
   .dashboard-nav
@@ -40,19 +45,6 @@
   .dashboard-nav
     grid-template-columns: repeat(auto-fit, minmax(120px,1fr))
     gap: 10px
-    &_link
-      min-width: 20%
-      
-  .module 
     
-
-  .module:hover 
-    background-color: #eee
-    cursor: pointer
-    color: #607d8b
-
-  .grid-pad 
-    padding: 10px 0
-
-// .grid-pad > [class*='col-']:last-of-type 
-//   padding-right: 20px
+    &_link
+      min-width: 20%    

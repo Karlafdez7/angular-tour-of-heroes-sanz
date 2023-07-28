@@ -1,47 +1,46 @@
-header
+.header
     grid-row: 1/2
 
-.header-title
-    color: grey
-    font-size: 30px
-    text-align: center
-.menu
-    display: flex
-    gap: 10px
-    margin: 20px 0
-    justify-content: center
+    &-title
+        color: grey
+        font-size: 30px
+        text-align: center
 
-
-    &-links
-        width: 115px
-        height: 30px
-        text-decoration: none
-        color: rgb(131,153,164)
-        background-color: rgb(238,238,238)
-        font-size: 18px
-        border-radius: 5px
+    &-menu
         display: flex
-        align-items: center
+        gap: 10px
+        margin: 20px 0
         justify-content: center
 
-        &:hover
-            color: rgb(53,172,234)
+        &_links
+            width: 115px
+            height: 30px
+            text-decoration: none
+            color: rgb(131,153,164)
+            background-color: rgb(238,238,238)
+            font-size: 18px
+            border-radius: 5px
+            display: flex
+            align-items: center
+            justify-content: center
 
+            &:hover
+                color: rgb(116, 194, 235)   
 
-@media (min-width:1024px)
-    .header-title
-        font-size: 40px
-        text-align: start
-    
-    .menu
-        justify-content:  start
-        gap: 30px
-
-        &-links
-            width: 130px
-            height: 40px
+.selected
+    background-color: rgb(131,153,164)
+    color: rgb(238,238,238)
             
-
+@media (min-width:1024px)
+    .header
+        &-title
+            font-size: 40px
+            text-align: start
     
+        &-menu
+            justify-content:  start
+            gap: 30px
 
-        
+            &_links
+                width: 130px
+                height: 40px    

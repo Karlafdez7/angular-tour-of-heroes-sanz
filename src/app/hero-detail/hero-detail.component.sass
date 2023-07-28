@@ -1,36 +1,39 @@
-h2
-    color: rgb(72, 72, 72)
-    margin-bottom: 15px
+.detail
+    &-title
+        color: rgb(72, 72, 72)
+        margin-bottom: 15px
+    
+    &-id
+        color: rgb(118, 118, 118)
+        font-size: 18px
+        margin-bottom: 10px
+    
+    &-button 
+        color: rgb(137,137,137)
+        background-color: rgb(238,238,238)
+        border: none
+        font-size: 18px
+        padding: 5px 8px
+        border-radius: 5px
+        cursor: pointer
+        margin-top: 30px
 
-span, label
+        &:hover 
+            background-color: #cfd8dc
+
+.detail-id_id, .form-label
     color: rgb(106,133,146)
     font-weight: bold
     font-size: 18px
 
-span
+.detail-id_id
     margin-right: 30px
 
-input
+.form-input
     font-size: 18px
     padding: 5px
     width: 70%
 
-.detail-id
-    color: rgb(118, 118, 118)
-    font-size: 18px
-    margin-bottom: 10px
-
-button 
-  color: rgb(137,137,137)
-  background-color: rgb(238,238,238)
-  border: none
-  font-size: 18px
-  padding: 5px 8px
-  border-radius: 5px
-  cursor: pointer
-  margin-top: 30px
-
-
 @media (min-width:768px)
-    input
+    .form-input
         width: 50%

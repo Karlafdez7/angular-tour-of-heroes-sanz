@@ -1,12 +1,7 @@
-<!-- <div *ngIf="messageService.messages.length">
-    <h2>Messages</h2>
-    <button class="clear" (click)="messageService.clear()">Clear</button>
-    <div *ngFor="let message of messageService.messages">{{message}}</div>
-</div> -->
 <div *ngIf="selectedHero !== undefined">
     <p class="message-text">
         <span>{{selectedHero.name |  uppercase}}</span>
         is my Hero!
     </p>
-    <button [routerLink] = "['/heroes', selectedHero.id]">View Details</button>
+    <button class="message-button"[routerLink] = "['/heroes', selectedHero.id]">View Details</button>
 </div>

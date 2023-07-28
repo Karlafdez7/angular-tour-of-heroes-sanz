@@ -1,14 +1,11 @@
-<header>
+<header class="header">
     <h1 class="header-title">{{title}}</h1>
-    <nav class="menu">
-        <a class='menu-links' routerLink="/dashboard">Dashboard</a>
-        <a class='menu-links' routerLink="/heroes">Heroes</a>
+    <nav class="header-menu">
+        <a class='header-menu_links' routerLink="/dashboard" (click)="onSelect('dashboard')" [class.selected]="'dashboard' === selectedRoute">Dashboard</a>
+        <a class='header-menu_links' routerLink="/heroes" (click)="onSelect('heroes')" [class.selected]="'heroes' === selectedRoute">Heroes</a>
     </nav>
     
 </header>
 <main>
     <router-outlet></router-outlet>
 </main>
-
-
-<!-- <app-messages></app-messages> -->

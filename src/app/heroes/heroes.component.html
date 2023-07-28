@@ -2,10 +2,10 @@
     <section class="heroes">
         <h2 class="heroes-title">My Heroes</h2>
         <ul class="heroes-list">
-            <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-                <span class="badge"> {{hero.id}}</span>
-                <span class="heroes-name">{{hero.name}}</span>
-                <i (click)="deleteHero(hero)" class="fa-regular fa-rectangle-xmark"></i>
+            <li class="heroes-list_item" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+                <span class="item-badge">{{hero.id}}</span>
+                <span class="item-name">{{hero.name}}</span>
+                <i (click)="deleteHero(hero)" class="fa-regular fa-rectangle-xmark item-icon"></i>
             </li>
         </ul>
     </section>
@@ -14,17 +14,3 @@
 
     <app-new-hero class="new-hero"></app-new-hero>
 </section>
-
-
-<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
-
-<!-- <h2>My Heroes test</h2>
-<nav class="heroes">
-    <a *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" [routerLink]="['/heroes', hero.id]">
-        <span class="badge"> {{hero.id}}</span>
-        {{hero.name}}
-    </a>
-</nav> -->
-
-
-

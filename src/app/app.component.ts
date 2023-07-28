@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
+  selectedRoute: string | undefined
+
+
+  ngOnInit(){
+    this.onSelect('dashboard');
+  }
+
+  onSelect(route: string) : void {
+    route === 'dashboard' ? this.selectedRoute = 'dashboard' : this.selectedRoute = 'heroes';
+  }
 }
