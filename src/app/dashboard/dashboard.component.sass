@@ -1,11 +1,12 @@
 .dashboard-title
+  text-align: center
   font-size:22px
   margin: 15px 0
 
 .dashboard-nav
   height: 60%
-  display: flex
-  flex-direction: column
+  display: grid
+  grid-template-rows: repeat(5,1fr)
   align-items: center
   justify-content: center
 
@@ -13,62 +14,45 @@
     min-width: 55%
     height: 75px
     padding-right: 0
+    text-decoration: none
 
 .module 
   font-size: 14px
+  color: #eee
+  background-color: #607d8b
+  border-radius: 2px
+  text-align: center
+  padding: 20px
+  max-height: 120px
+  min-width: 120px
+
 
 
 @media (min-width: 768px) 
+  .dashboard-nav
+      grid-template-columns: 350px
+
   .module
     font-size: 16px
 
 @media (min-width: 1024px) 
-  
-[class*='col-'] 
-  float: left
-  padding-right: 20px
-  padding-bottom: 20px
 
-[class*='col-']:last-of-type 
-  padding-right: 0
+  .dashboard-nav
+    grid-template-columns: repeat(auto-fit, minmax(120px,1fr))
+    gap: 10px
+    &_link
+      min-width: 20%
+      
+  .module 
+    
 
-a 
-  text-decoration: none
+  .module:hover 
+    background-color: #eee
+    cursor: pointer
+    color: #607d8b
 
-*, *:after, *:before 
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  box-sizing: border-box
-
-h3 
-  text-align: center
-  margin-bottom: 0
-
-h4 
-  position: relative
-
-.grid 
-  margin: 0
-
-.col-1-5 
-  width: 20%
-
-.module 
-  padding: 20px
-  text-align: center
-  color: #eee
-  max-height: 120px
-  min-width: 120px
-  background-color: #607d8b
-  border-radius: 2px
-
-.module:hover 
-  background-color: #eee
-  cursor: pointer
-  color: #607d8b
-
-.grid-pad 
-  padding: 10px 0
+  .grid-pad 
+    padding: 10px 0
 
 // .grid-pad > [class*='col-']:last-of-type 
 //   padding-right: 20px
