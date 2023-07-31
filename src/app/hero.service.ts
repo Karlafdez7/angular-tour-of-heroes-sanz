@@ -17,12 +17,10 @@ export class HeroService {
   }
   
   getHeroes(): Observable<Hero[]>{
-    //this.messageService.add('HeroService: fetched heroes');
     return this.heroesSubject.asObservable();
   }
 
   getHero(id: number): Observable<Hero | undefined> {
-    //this.messageService.add(`HeroService: fetched hero with id=${id}`);
     return of(this.getStoredHeroes().find(hero => hero.id === id));
   }
   
@@ -39,6 +37,17 @@ export class HeroService {
     const heroes = this.getStoredHeroes().filter(h => h.id !== hero.id); 
     this.saveHeroesToLocalStorage(heroes); 
     this.updateHeroesFromLocalStorage(); 
+  }
+
+  updateHeroName(name: string, id: number): void {
+    const heroes = this.getStoredHeroes();
+    const heroIndex = heroes.findIndex(hero => hero.id === id);
+
+    if(heroIndex !== -1){
+      heroes[heroIndex].name = name;
+      this.saveHeroesToLocalStorage(heroes);
+      this.updateHeroesFromLocalStorage();
+    }
   }
   
   private getStoredHeroes(): Hero[] { 

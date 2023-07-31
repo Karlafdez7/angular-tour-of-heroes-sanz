@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
-  selectedRoute: string | undefined
+  selectedRoute!: string;
 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.updateSelectedRoute(this.router.url); // Inicializar selectedRoute con la ruta actual al cargar el componente
 
-  ngOnInit(){
-    this.onSelect('dashboard');
+    // Suscripción a eventos de navegación para actualizar selectedRoute al cambiar la ruta
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.updateSelectedRoute(this.router.url);
+      }
+    });
   }
 
-  onSelect(route: string) : void {
-    route === 'dashboard' ? this.selectedRoute = 'dashboard' : this.selectedRoute = 'heroes';
+  private updateSelectedRoute(url: string): void {
+    switch (url) {
+      case '/dashboard':
+        this.selectedRoute = 'dashboard';
+        break;
+      case '/heroes':
+        this.selectedRoute = 'heroes';
+        break;
+      default:
+        this.selectedRoute = '';
+        break;
+    }
   }
 }

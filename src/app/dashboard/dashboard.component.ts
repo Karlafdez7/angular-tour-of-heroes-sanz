@@ -10,8 +10,8 @@ import { HeroService } from '../hero.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-  selectedHero: Hero | undefined = undefined;
-  heroId : number | undefined = undefined;
+  selectedHero!: Hero;
+  heroId! : number;
   
   constructor(private heroService: HeroService, private route: ActivatedRoute) { 
     this.route.params.subscribe(params => {

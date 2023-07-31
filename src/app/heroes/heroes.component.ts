@@ -10,9 +10,9 @@ import {HeroService} from '../hero.service';
 export class HeroesComponent implements OnInit {
 
   
-  heroes: Hero[] | undefined = undefined;
-  selectedHero: Hero | undefined = undefined;
-  selectedHeroId: number | undefined = undefined;
+  heroes!: Hero[];
+  selectedHero!: Hero;
+  selectedHeroId!: number;
 
   constructor(private heroService: HeroService){};
   

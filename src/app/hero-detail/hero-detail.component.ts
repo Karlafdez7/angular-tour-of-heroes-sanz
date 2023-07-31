@@ -12,6 +12,7 @@ import {Hero} from '../hero';
 
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero | undefined = undefined;
+  name: string = '';
 
   constructor(private route: ActivatedRoute, private heroService: HeroService){}
   
@@ -21,6 +22,15 @@ export class HeroDetailComponent implements OnInit {
 
   getHeroDetails(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id).subscribe(hero => this.hero = hero);
+    this.heroService.getHero(id).subscribe((hero) => {
+      this.hero = hero;
+      this.name = hero?.name || '';
+    });
+  }
+
+  updateHeroName(name: string): void{
+    if(this.hero) {
+      this.heroService.updateHeroName(name, this.hero.id)
+    }
   }
 }

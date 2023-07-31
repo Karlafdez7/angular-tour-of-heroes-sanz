@@ -7,7 +7,7 @@
     <div class="detail-form">
         <label class="form-label">
             name:
-            <input class="form-input" [(ngModel)]="hero.name" placeholder="name">
+            <input class="form-input" [(ngModel)]="hero.name" placeholder="name" (change)="updateHeroName(hero.name)">
         </label>
     </div>
     <button class="detail-button" routerLink="/dashboard">Back</button>

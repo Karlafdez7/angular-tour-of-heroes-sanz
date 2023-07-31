@@ -1,6 +1,6 @@
 <h3 class="dashboard-title">Top 5</h3>
 <nav class="dashboard-nav">
-    <a *ngFor="let hero of heroes" class="dashboard-nav_link" (click)="onSelect(hero)" [routerLink]="['/heroes', hero.id]">
+    <a *ngFor="let hero of heroes" class="dashboard-nav_link" (click)="onSelect(hero)" [routerLink]="['/details', hero.id]">
         <h4 class="module">{{hero.name}}</h4>
     </a>
 </nav>

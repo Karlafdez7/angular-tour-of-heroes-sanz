@@ -8,7 +8,7 @@ import { Hero } from '../hero';
   styleUrls: ['./messages.component.sass']
 })
 export class MessagesComponent {
-  @Input() selectedHero: Hero | undefined = undefined;
+  @Input() selectedHero!: Hero;
 
   constructor(public messageService: MessageService) {}
   ngOnInit() {}
