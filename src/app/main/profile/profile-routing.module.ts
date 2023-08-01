@@ -7,15 +7,14 @@ const routes: Routes = [
   { 
     path: '', 
     component: ProfileComponent,
-    children: [
-      {
-        path: 'edit-profile', component: EditProfileComponent
-      },
-      {
-        path: 'change-password', component: ChangePasswordComponent
-      }
-    ]
-}];
+  },
+  {
+    path: 'edit-profile', component: EditProfileComponent
+  },
+  {
+    path: 'change-password', component: ChangePasswordComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

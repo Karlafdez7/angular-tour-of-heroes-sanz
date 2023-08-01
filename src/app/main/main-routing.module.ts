@@ -6,15 +6,17 @@ import {ProfileComponent} from './profile/profile.component';
 const routes: Routes = [
   { 
     path: '', 
-    component: MainComponent, 
+    component: MainComponent,
     children: [
+      { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
       {
-        path: 'profile', component: ProfileComponent
-      },
-
-    ]
+        path: '',
+        redirectTo: 'profile',
+        pathMatch: 'full'
+      }
+    ] 
   },
-  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
+
 ];
 
 @NgModule({

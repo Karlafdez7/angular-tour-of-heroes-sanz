@@ -8,7 +8,6 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
-import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -19,7 +18,6 @@ import { MainComponent } from './main/main.component';
     MessagesComponent,
     DashboardComponent,
     NewHeroComponent,
-    MainComponent,
 
   ],
   imports: [
