@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.sass']
 })
-export class AppComponent {
-  title = 'Tour of Heroes';
+export class ProfileComponent {
   selectedRoute!: string;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
@@ -23,23 +23,11 @@ export class AppComponent {
 
   private updateSelectedRoute(url: string): void {
     switch (url) {
-      case '/dashboard':
-        this.selectedRoute = 'dashboard';
-        break;
-      case '/heroes':
-        this.selectedRoute = 'heroes';
-        break;
-      case '/main':
-        this.selectedRoute = 'main';
-        break;
-      case '/main/profile':
-        this.selectedRoute = 'main';
-        break;
       case '/main/profile/edit-profile':
-        this.selectedRoute = 'main';
+        this.selectedRoute = 'edit-profile';
         break;
       case '/main/profile/change-password':
-        this.selectedRoute = 'main';
+        this.selectedRoute = 'change-password';
         break;
       default:
         this.selectedRoute = '';

@@ -8,6 +8,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
+import { MainComponent } from './main/main.component';
+
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { NewHeroComponent } from './new-hero/new-hero.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    NewHeroComponent
+    NewHeroComponent,
+    MainComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
