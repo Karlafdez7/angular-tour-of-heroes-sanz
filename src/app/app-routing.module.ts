@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:'dashboard', component: DashboardComponent},
   {path: 'details/:id', component: HeroDetailComponent},
   { path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule) },
+  { path: 'credentials', loadChildren: () => import('./credentials/credentials.module').then(m => m.CredentialsModule) },
 ];
 
 @NgModule({

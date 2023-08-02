@@ -41,6 +41,15 @@ export class AppComponent {
       case '/main/profile/change-password':
         this.selectedRoute = 'main';
         break;
+      case '/credentials':
+        this.selectedRoute = 'credentials';
+        break;
+      case '/credentials/login':
+        this.selectedRoute = 'credentials';
+        break;
+        case '/credentials/login/new-profile':
+      this.selectedRoute = 'credentials';
+      break;
       default:
         this.selectedRoute = '';
         break;
