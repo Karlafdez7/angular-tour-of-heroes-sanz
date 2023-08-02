@@ -5,7 +5,7 @@
             <li class="heroes-list_item" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
                 <span class="item-badge">{{hero.id}}</span>
                 <span class="item-name">{{hero.name}}</span>
-                <i (click)="deleteHero(hero)" class="fa-regular fa-rectangle-xmark item-icon"></i>
+                <i class="fa-regular fa-rectangle-xmark item-icon"></i>
             </li>
         </ul>
     </section>

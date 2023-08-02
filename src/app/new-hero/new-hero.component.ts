@@ -11,11 +11,11 @@ export class NewHeroComponent {
 
   constructor(private heroService: HeroService) {}
 
-  addHero() : void {
-    if(this.newHeroName.trim()) {
-      this.heroService.addHero(this.newHeroName.trim());
-      this.newHeroName = '';
-      window.location.reload()
-    }
-  }
+  // addHero() : void {
+  //   if(this.newHeroName.trim()) {
+  //     this.heroService.addHero(this.newHeroName.trim());
+  //     this.newHeroName = '';
+  //     window.location.reload()
+  //   }
+  // }
 }
