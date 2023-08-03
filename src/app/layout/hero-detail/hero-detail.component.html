@@ -1,0 +1,14 @@
+<div class="detail" *ngIf="hero">
+    <h2 class="detail-title">{{hero.name}} details!</h2>
+    <div class="detail-id">
+        <span class="detail-id_id">id:</span>
+        {{hero.id}}
+    </div>
+    <div class="detail-form">
+        <label class="form-label">
+            name:
+            <input class="form-input" [(ngModel)]="hero.name" placeholder="name" (change)="updateHeroName(hero.name)">
+        </label>
+    </div>
+    <button class="detail-button" routerLink="/layout/dashboard">Back</button>
+</div>

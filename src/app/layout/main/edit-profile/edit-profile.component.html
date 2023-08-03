@@ -1,0 +1,15 @@
+<div mat-dialog-content class="form">
+    <mat-form-field>
+        <mat-label> Modifica tu usuario</mat-label>
+        <input matInput class="form-input" [(ngModel)]="data.username">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Modifica tu email</mat-label>
+        <input matInput class="form-input" [(ngModel)]="data.email">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" (click)='save()' cdkFocusInitial>Guardar</button>
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+</div>
+

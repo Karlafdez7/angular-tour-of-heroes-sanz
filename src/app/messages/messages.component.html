@@ -1,7 +1,0 @@
-<div *ngIf="selectedHero !== undefined">
-    <p class="message-text">
-        <span>{{selectedHero.name |  uppercase}}</span>
-        is my Hero!
-    </p>
-    <button class="message-button" [routerLink] = "['/details', selectedHero.id]" >View Details</button>
-</div>

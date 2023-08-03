@@ -4,11 +4,10 @@ import { CredentialsComponent } from './credentials.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [{ path: '', 
+const routes: Routes = [
+  { path: '', 
 component: CredentialsComponent,
-children: [
-  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-  
+children: [  
   {
     path: '',
     redirectTo: 'login',
@@ -18,12 +17,13 @@ children: [
     path: 'new-profile',
     component: NewProfileComponent
   },
-  // {
-  //   path: 'login',
-  //   component: LoginComponent
-  // }
-]  
+  {
+    path: 'login',
+    component: LoginComponent
+  }
+  ]  
 }
+
 ];
 
 @NgModule({

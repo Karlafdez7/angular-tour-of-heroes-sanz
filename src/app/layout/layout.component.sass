@@ -1,0 +1,33 @@
+.layout-navigate
+        display: flex
+        gap: 10px
+        margin: 20px 0
+        justify-content: center
+
+        &_links
+            width: 115px
+            height: 30px
+            text-decoration: none
+            color: rgb(131,153,164)
+            background-color: rgb(238,238,238)
+            font-size: 18px
+            border-radius: 5px
+            display: flex
+            align-items: center
+            justify-content: center
+
+            &:hover
+                color: rgb(116, 194, 235)   
+
+.selected
+    background-color: rgb(131,153,164)
+    color: rgb(238,238,238)
+            
+@media (min-width:1024px)
+    .layout-navigate
+        justify-content:  start
+        gap: 30px
+
+        &_links
+            width: 130px
+            height: 40px    

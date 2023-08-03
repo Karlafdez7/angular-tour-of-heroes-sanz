@@ -1,0 +1,8 @@
+<!-- <router-outlet></router-outlet> -->
+<app-profile [username] = "username" [email]="email"></app-profile>
+
+<button  class="main-button"  mat-raised-button (click)="openEdit()">Editar perfil</button>
+<button  class="main-button"  mat-raised-button (click)="openPassword()">Cambiar contraseña</button>
+ 
+<h2 *ngIf="message">{{username}} tu perfil ha sido modificado</h2>
+<h2 *ngIf="newPassword">Tu contraseña ha sido modificada</h2>

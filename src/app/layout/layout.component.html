@@ -1,0 +1,7 @@
+<nav class="layout-navigate">
+    <a class='layout-navigate_links' routerLink="dashboard" [class.selected]="'dashboard' === selectedRoute">Dashboard</a>
+    <a class='layout-navigate_links' routerLink="heroes" [class.selected]="'heroes' === selectedRoute">Heroes</a>
+    <a class='layout-navigate_links' routerLink="main" [class.selected]="'main' === selectedRoute">Configuración</a>
+</nav>
+
+<router-outlet></router-outlet>
