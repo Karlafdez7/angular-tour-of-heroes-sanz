@@ -11,29 +11,25 @@ export class AuthServiceService {
   constructor() { }
 
   login(email: string, password:string):boolean {
-    console.log('2')
     const tokenJSON= localStorage.getItem('token')
     
     if(tokenJSON){
       const token=JSON.parse(tokenJSON);
       this.emailLS=token.email;
       this.passwordLS=token.password;
-      console.log('3')
     }
 
-    if(email === this.emailLS && password === this.passwordLS){
-      this.isAuthenticated=true;
-      console.log('4')
+    if (email === this.emailLS && password === this.passwordLS) {
+      this.isAuthenticated = true;
       return true;
     } else {
-      this.isAuthenticated=false;
-      console.log('5')
+      this.isAuthenticated = false;
+      console.log('error')
       return false;
     }
   }
 
   isLoggedIn(): boolean {
-    console.log('6')
     return this.isAuthenticated;
   }
 }
