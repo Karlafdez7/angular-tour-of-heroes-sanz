@@ -4,11 +4,13 @@ import { MainComponent } from './main.component';
 import { ProfileComponent } from './profile/profile.component'
 import { ChangePasswordComponent } from './change-password/change-password.component'
 import { EditProfileComponent } from './edit-profile/edit-profile.component'
+import { AuthGuard } from 'src/app/auth-guard.guard';
 
 const routes: Routes = [
   { 
     path: '', 
     component: MainComponent,
+    canActivate:[AuthGuard],
     children: [
       {
         path: '',
