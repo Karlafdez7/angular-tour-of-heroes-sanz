@@ -23,6 +23,6 @@ import { NewProfileComponent } from './new-profile/new-profile.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+    ]
 })
 export class CredentialsModule { }

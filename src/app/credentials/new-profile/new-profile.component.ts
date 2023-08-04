@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-new-profile',
   templateUrl: './new-profile.component.html',
@@ -9,6 +11,7 @@ import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 })
 export class NewProfileComponent {
   newProfile: FormGroup;
+
 
   constructor(private router: Router, private fb: FormBuilder){
     this.newProfile= this.fb.group({
@@ -19,5 +22,24 @@ export class NewProfileComponent {
 
     })
   }
+
+  onSave(): void {
+    // Obtener los valores del formulario
+    const email = this.newProfile.get('email')?.value;
+    const password = this.newProfile.get('password')?.value;
+    // const user:any[] = [this.newProfile.get('email')?.value,this.newProfile.get('password')?.value]
+    const token= {email, password};
+
+    const tokenJSON= JSON.stringify(token)
+
+
+    // Guardar en localStorage
+    localStorage.setItem('token', tokenJSON);
+    // localStorage.setItem('password', password);
+
+    // Navegar a otra página (opcional)
+    // this.router.navigate(['/otra-ruta']);
+  }
+
 
 }
