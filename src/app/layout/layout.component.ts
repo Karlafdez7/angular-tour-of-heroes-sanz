@@ -29,6 +29,9 @@ export class LayoutComponent {
       case '/layout/heroes':
         this.selectedRoute = 'heroes';
         break;
+      case '/list':
+      this.selectedRoute = 'list';
+      break;
       case '/layout/main':
         this.selectedRoute = 'main';
         break;
