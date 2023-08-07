@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-
+import { AuthServiceService } from 'src/app/auth-service.service';
 
 @Component({
   selector: 'app-layout',
@@ -10,7 +10,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 export class LayoutComponent {
   selectedRoute!: string;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private authService: AuthServiceService) {
     this.updateSelectedRoute(this.router.url); // Inicializar selectedRoute con la ruta actual al cargar el componente
 
     // Suscripción a eventos de navegación para actualizar selectedRoute al cambiar la ruta
@@ -45,6 +45,10 @@ export class LayoutComponent {
         this.selectedRoute = '';
         break;
     }
+  }
+
+  logout(){
+    this.authService.logout()
   }
 }
 

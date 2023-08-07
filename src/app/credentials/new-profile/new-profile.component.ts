@@ -27,7 +27,6 @@ export class NewProfileComponent {
     // Obtener los valores del formulario
     const email = this.newProfile.get('email')?.value;
     const password = this.newProfile.get('password')?.value;
-    // const user:any[] = [this.newProfile.get('email')?.value,this.newProfile.get('password')?.value]
     const token= {email, password};
 
     const tokenJSON= JSON.stringify(token)
@@ -35,10 +34,6 @@ export class NewProfileComponent {
 
     // Guardar en localStorage
     localStorage.setItem('token', tokenJSON);
-    // localStorage.setItem('password', password);
-
-    // Navegar a otra página (opcional)
-    // this.router.navigate(['/otra-ruta']);
   }
 
 

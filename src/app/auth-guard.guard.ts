@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Injectable, inject } from '@angular/core';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivateFn, createUrlTreeFromSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthServiceService } from './auth-service.service';
 
@@ -20,5 +20,15 @@ export class AuthGuard {
     return false;
   }
 }
+
+// export const canActivateLogged: CanActivateFn = (
+//   route: ActivatedRouteSnapshot,
+//   state: RouterStateSnapshot
+// ) => {
+//   const isLogged = inject(AuthServiceService).isLoggedIn()
+
+//   // Si el usuario no está autenticado, redirige a la página de inicio de sesión
+//   return isLogged || createUrlTreeFromSnapshot(route, ['/credentials/login']);
+// }
 
 

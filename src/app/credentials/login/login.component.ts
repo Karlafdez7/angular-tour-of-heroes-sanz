@@ -18,9 +18,10 @@ export class LoginComponent {
   constructor(private fb:FormBuilder, private authService: AuthServiceService, private router: Router, private route: ActivatedRoute){
     this.profileForm=this.fb.group({
       email: ["",[Validators.email , Validators.required]],
-      password: ["", [Validators.minLength(8), Validators.required]]
+      password: ["", [Validators.minLength(8), Validators.required]],
     });
-   }
+  }
+
 
   login() {
     const email = this.profileForm.get('email')?.value;
@@ -28,8 +29,9 @@ export class LoginComponent {
     // this.authService.login(email, password)
     if(!this.authService.login(email, password)){
       this.msgError= 'La contraseña o el usuario son incorrectos'
+      this.router.navigate(['/'])
+    } else {
+      this.router.navigate(['/layout'])
     }
   }
-
-
 }

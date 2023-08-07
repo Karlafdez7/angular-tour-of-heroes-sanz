@@ -37,8 +37,6 @@ export class ProfileComponent {
         break;
     }
   }
-
-
 }
 
 
