@@ -12,18 +12,22 @@ export class ListService {
   private listSubject = new BehaviorSubject<listModel[]>([]);
   
   constructor(private http: HttpClient) {
-    this.fetchListApi();
+    // this.fetchListApi();
    }
 
-   getItems(): Observable<listModel[]> {
-    return this.listSubject.asObservable();
-  }
+   getPost(){
+    return this.http.get<listModel[]>(this.urlapi)
+   }
 
-  private fetchListApi() {
-    this.http.get<listModel[]>(this.urlapi).subscribe(
-      (data => {
-        this.listSubject.next(data);
-      }),
-    );
-  }
+  //  getItems(): Observable<listModel[]> {
+  //   return this.listSubject.asObservable();
+  // }
+
+  // private fetchListApi() {
+  //   this.http.get<listModel[]>(this.urlapi).subscribe(
+  //     (data => {
+  //       this.listSubject.next(data);
+  //     }),
+  //   );
+  // }
 }

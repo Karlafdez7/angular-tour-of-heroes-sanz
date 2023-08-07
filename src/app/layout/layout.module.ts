@@ -9,7 +9,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
-import { ListComponent } from './list/list.component'
+import { ListComponent } from './post/list/list.component'
 
 @NgModule({
   declarations: [
