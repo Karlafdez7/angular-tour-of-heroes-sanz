@@ -1,1 +1,10 @@
-<p>post-data-section works!</p>
+<div *ngIf="postDetails">
+    <h2>Detalles del Post</h2>
+    <p><strong>ID:</strong> {{ postDetails.id }}</p>
+    <p><strong>Título:</strong> {{ postDetails.title }}</p>
+    <p><strong>Cuerpo:</strong> {{ postDetails.body }}</p>
+  </div>
+  
+  <div *ngIf="!postDetails">
+    <p>No se han encontrado detalles.</p>
+  </div>

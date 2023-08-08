@@ -10,31 +10,18 @@ import listModel from 'src/app/listModel';
 })
 export class DetailComponent implements OnInit {
 
-item!:listModel;
-listApiId! : number;
+  postDetails!: listModel;
 
-constructor(private listService: ListService, private route: ActivatedRoute){
-  console.log(this.item);
-}
+  constructor(private listService: ListService, private route: ActivatedRoute) { }
 
-ngOnInit():void{
-  this.route.params.subscribe(params => {
-    this.listApiId = params['id'];
-  if (this.listApiId){
-    this.fetchItemDetails()
+  ngOnInit() {
+    const postIdString = this.route.snapshot.paramMap.get('id'); // Obtener el ID del parámetro de la ruta como string
+    if (postIdString !== null) {
+      const postId = Number(postIdString); // Convertir el string a número
+      this.listService.getPostById(postId).subscribe((details: listModel) => {
+        this.postDetails = details;
+      });
+    }
   }
-  })
-}
-
-fetchItemDetails(){
-  this.listService.getItemId(this.listApiId).subscribe(response =>{
-    this.item = response;
-    console.log('este es el fetch', this.item)
-  });
-}
-// getItemDetails():void{
-//   const id= Number(this.route.snapshot.paramMap.get('id'));
-
-// }
 
 }

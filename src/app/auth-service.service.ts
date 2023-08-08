@@ -46,7 +46,6 @@ export class AuthServiceService {
       return true;
     } else {
       this.isAuthenticated = false;
-      console.log('error')
       return false;
     }
   }

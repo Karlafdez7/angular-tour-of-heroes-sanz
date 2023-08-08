@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import listModel from 'src/app/listModel';
 
 @Component({
   selector: 'app-post-data-section',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-data-section.component.sass']
 })
 export class PostDataSectionComponent {
-
+@Input() postDetails!:listModel
 }

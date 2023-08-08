@@ -10,38 +10,17 @@ export class ListService {
 
   listApi!:listModel[];
   private urlapi = 'https://jsonplaceholder.typicode.com/posts'
-  // private listSubject = new BehaviorSubject<listModel[]>([]);
   
-  constructor(private http: HttpClient) {
-    // this.fetchListApi();
-   }
+  constructor(private http: HttpClient) {}
 
   getPost(){
-  
     return this.http.get<listModel[]>(this.urlapi);
   }
 
-  // getList(){
-  //   this.getPost().subscribe((list:listModel[])=> {
-  //     this.listApi = list;
-
-      
-  //   }); 
-  // }
-  getItemId(id:number): Observable<any>{
-    const url = `${this.urlapi}/${id}`
-    return this.http.get(url);
+  getPostById(id: number): Observable<listModel> {
+    const url = `${this.urlapi}/${id}`;
+    return this.http.get<listModel>(url);
   }
 
-  //  getList(): Observable<listModel[]> {
-  //   return this.listSubject.asObservable();
-  // }
 
-  // private fetchListApi() {
-  //   this.http.get<listModel[]>(this.urlapi).subscribe(
-  //     (data => {
-  //       this.listSubject.next(data);
-  //     }),
-  //   );
-  // }
 }

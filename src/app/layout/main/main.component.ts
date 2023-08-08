@@ -42,7 +42,6 @@ export class MainComponent {
     );
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       this.username = result.username;
       this.email = result.email;
     });

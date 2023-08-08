@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
   this.authService.isAuthenticated ? this.router.navigate(['/layout']) : this.router.navigate(['/'])
-    console.log(this.authService.isAuthenticated)
+
   }
   
 }
