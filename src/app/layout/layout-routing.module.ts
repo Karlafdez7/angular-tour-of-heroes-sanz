@@ -5,7 +5,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import {AuthGuard} from '../auth-guard.guard'
-import { ListComponent } from './post/list/list.component';
+
 const routes: Routes = [
   { path: '', 
   component: LayoutComponent,
@@ -15,7 +15,6 @@ const routes: Routes = [
     { path: 'heroes', component: HeroesComponent},
     { path:'dashboard', component: DashboardComponent},
     { path: 'details/:id', component: HeroDetailComponent},
-    { path: 'list', component: ListComponent },
     { path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule)},
     { path: 'post', loadChildren: () => import('./post/post.module').then(m => m.PostModule) }
   ]

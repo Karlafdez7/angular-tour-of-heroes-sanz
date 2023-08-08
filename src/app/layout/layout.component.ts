@@ -29,7 +29,7 @@ export class LayoutComponent {
       case '/layout/heroes':
         this.selectedRoute = 'heroes';
         break;
-      case '/list':
+      case '/layout/post/list':
       this.selectedRoute = 'list';
       break;
       case '/layout/main':

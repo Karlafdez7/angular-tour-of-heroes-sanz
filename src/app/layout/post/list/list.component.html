@@ -1,3 +1,5 @@
+<app-detail></app-detail>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> Id </th>
@@ -15,5 +17,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row (click)="showMessage(row.id)" *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row  *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<!-- (click)="onSelect(row)" -->
