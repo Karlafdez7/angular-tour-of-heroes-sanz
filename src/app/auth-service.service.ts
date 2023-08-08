@@ -51,7 +51,6 @@ export class AuthServiceService {
   }
 
   logout(): void {
-    // Eliminamos la información de inicio de sesión del almacenamiento local al cerrar sesión.
     localStorage.removeItem(this.AUTH_KEY);
     this.isAuthenticated = false;
     this.router.navigate(['/credentials/login']);

@@ -29,7 +29,6 @@ export class ListComponent  implements OnInit{
 
   onSelect(id: number): void {
     if (id !== undefined && id !== null) {
-      // Navegar a la página de detalles con el ID del elemento seleccionado
       this.router.navigate(['layout/post/details', id]);
     } else {
       console.error('Item ID is undefined or null.');
