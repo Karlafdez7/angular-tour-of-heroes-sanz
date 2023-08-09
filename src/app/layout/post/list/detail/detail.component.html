@@ -1,8 +1,8 @@
 <!-- <app-post-data-section [postDetails]="postDetails"></app-post-data-section> -->
 
 <nav class="detail-navigate">
-    <a class="detail-navigate_links" routerLink='view'>View</a>
-    <a class="detail-navigate_links" routerLink='edit'>Edit</a>
+    <a class="detail-navigate_links" routerLink='view' [class.selected]="'view' === selectedRoute">View</a>
+    <a class="detail-navigate_links" routerLink='edit' [class.selected]="'edit' === selectedRoute">Edit</a>
 </nav>
 
 <router-outlet></router-outlet>

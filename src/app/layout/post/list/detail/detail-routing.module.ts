@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DetailComponent} from './detail.component';
-import { PostDataSectionComponent } from '../../component/post-data-section/post-data-section.component';
-import { EditDataSectionComponent } from '../../component/edit-data-section/edit-data-section.component';
+import { ViewPostComponent } from '../../component/view-post/view-post.component';
+import { EditPostComponent } from '../../component/edit-post/edit-post.component';
 
 
-const routes: Routes = [{ path: '', component: DetailComponent,children: [
-  { path: '', redirectTo: 'view', pathMatch: 'full' },
-  { path: 'view', component: PostDataSectionComponent},
-  { path: 'edit', component: EditDataSectionComponent },
-  
+const routes: Routes = [{ path: '', component: DetailComponent,
+  children: [
+    { path: '', redirectTo: 'view', pathMatch: 'full' },
+    { path: 'view', component: ViewPostComponent},
+    { path: 'edit', component: EditPostComponent },
   ]
 }]
 

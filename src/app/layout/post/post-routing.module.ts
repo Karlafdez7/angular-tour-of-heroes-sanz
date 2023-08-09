@@ -4,9 +4,9 @@ import { PostComponent } from './post.component';
 import { ListComponent } from './list/list.component';
 
 const routes: Routes = [{ path: '', component: PostComponent,children: [
-  { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'details/:id', loadChildren: () => import('./list/detail/detail.module').then(m => m.DetailModule)},
   { path: 'list', component: ListComponent },
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
   
   ]
 }]

@@ -7,19 +7,19 @@ import listModel from 'src/app/listModel';
   templateUrl: './post-data-section.component.html',
   styleUrls: ['./post-data-section.component.sass']
 })
-export class PostDataSectionComponent implements OnInit {
-  // @Input() postDetails!:listModel
+export class PostDataSectionComponent{
+  @Input() postDetails!:listModel
 
-  // itemDetails!: listModel;
-  currentItem: listModel | null = null;
+  // // itemDetails!: listModel;
+  // currentItem: listModel | null = null;
 
-  constructor(private listService: ListService){}
+  // constructor(private listService: ListService){}
 
-  ngOnInit(){
-    this.listService.getItem().subscribe((item) => {
-      this.currentItem = item
-    })
-    // this.itemDetails = this.listService.itemSubject;
-    // console.log('3', this.itemDetails)
-  }
+  // ngOnInit(){
+  //   this.listService.getItem().subscribe((item) => {
+  //     this.currentItem = item
+  //   })
+  //   // this.itemDetails = this.listService.itemSubject;
+  //   // console.log('3', this.itemDetails)
+  // }
 }

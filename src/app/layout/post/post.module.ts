@@ -5,11 +5,15 @@ import { PostRoutingModule } from './post-routing.module';
 import { PostComponent } from './post.component';
 import { ListComponent } from './list/list.component';
 import { MatTableModule } from '@angular/material/table';
+// import { ViewPostComponent } from './component/view-post/view-post.component';
+// import { EditPostComponent } from './component/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
     PostComponent,
     ListComponent,
+    // ViewPostComponent,
+    // EditPostComponent,
   ],
   imports: [
     CommonModule,
