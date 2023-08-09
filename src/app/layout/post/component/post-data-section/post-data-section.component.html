@@ -1,10 +1,10 @@
-<div *ngIf="postDetails">
+<div *ngIf="currentItem">
     <h2>Detalles del Post</h2>
-    <p><strong>ID:</strong> {{ postDetails.id }}</p>
-    <p><strong>Título:</strong> {{ postDetails.title }}</p>
-    <p><strong>Cuerpo:</strong> {{ postDetails.body }}</p>
-  </div>
-  
-  <div *ngIf="!postDetails">
-    <p>No se han encontrado detalles.</p>
-  </div>
+    <p><strong>ID:</strong> {{ currentItem.id }}</p>
+    <p><strong>Título:</strong> {{ currentItem.title }}</p>
+    <p><strong>Cuerpo:</strong> {{ currentItem.body }}</p>
+</div>
+
+<div *ngIf="!currentItem">
+  <p>No se han encontrado detalles.</p>
+</div>

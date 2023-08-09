@@ -30,8 +30,11 @@ export class LayoutComponent {
         this.selectedRoute = 'heroes';
         break;
       case '/layout/post/list':
-      this.selectedRoute = 'list';
-      break;
+        this.selectedRoute = 'list';
+        break;
+      case '/layout/post/details/':
+        this.selectedRoute = 'list';
+        break;
       case '/layout/main':
         this.selectedRoute = 'main';
         break;

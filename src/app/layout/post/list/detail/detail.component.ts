@@ -10,18 +10,30 @@ import listModel from 'src/app/listModel';
 })
 export class DetailComponent implements OnInit {
 
-  postDetails!: listModel;
+  // postDetails!: listModel;
 
   constructor(private listService: ListService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const postIdString = this.route.snapshot.paramMap.get('id'); // Obtener el ID del parámetro de la ruta como string
+    
     if (postIdString !== null) {
       const postId = Number(postIdString); // Convertir el string a número
       this.listService.getPostById(postId).subscribe((details: listModel) => {
-        this.postDetails = details;
-      });
+        this.listService.saveDetails(details);
+        console.log('0', details)})
+        // if(this.postDetails){
+        //   this.listService.saveDetails(this.postDetails)
+        //   console.log('1', this.postDetails)
+        }
+      };
     }
-  }
 
-}
+    
+
+  
+
+  // getDetailsToService(){
+    
+  // }
+

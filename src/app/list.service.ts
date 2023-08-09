@@ -9,6 +9,8 @@ import { Observable, BehaviorSubject, of } from 'rxjs';
 export class ListService {
 
   listApi!:listModel[];
+  // item!: listModel;
+  public itemSubject: BehaviorSubject<listModel | null> = new BehaviorSubject<listModel | null>(null);
   private urlapi = 'https://jsonplaceholder.typicode.com/posts'
   
   constructor(private http: HttpClient) {}
@@ -22,5 +24,12 @@ export class ListService {
     return this.http.get<listModel>(url);
   }
 
+  saveDetails(item: listModel){
+    this.itemSubject.next(item)
+    console.log('2', this.itemSubject)
+  }
 
+  getItem(): Observable<listModel | null> {
+    return this.itemSubject.asObservable();
+  }
 }

@@ -1,1 +1,12 @@
-<p>edit-data-section works!</p>
+<h2 class="detail-title">Editar Post</h2>
+<form *ngIf="currentItem" class="edit-list-form">
+    <p class="detail-id"><span class="detail-id_id">ID:</span>{{ currentItem.id }}</p>
+    <label class='form-label' for=""><strong>Título:</strong></label>
+    <input class="form-input" type="text" value='{{ currentItem.title }}'>
+    <label class='form-label' for=""><strong>Cuerpo:</strong></label>
+    <textarea class="form-textarea">{{ currentItem.body }}</textarea>
+</form>
+
+<div *ngIf="!currentItem">
+    <p>No se han encontrado detalles.</p>
+  </div>

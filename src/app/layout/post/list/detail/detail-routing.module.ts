@@ -6,8 +6,8 @@ import { EditDataSectionComponent } from '../../component/edit-data-section/edit
 
 
 const routes: Routes = [{ path: '', component: DetailComponent,children: [
-  { path: 'view', component: PostDataSectionComponent},
   { path: '', redirectTo: 'view', pathMatch: 'full' },
+  { path: 'view', component: PostDataSectionComponent},
   { path: 'edit', component: EditDataSectionComponent },
   
   ]

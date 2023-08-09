@@ -14,7 +14,7 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     CommonModule,
     PostRoutingModule,
-    MatTableModule
+    MatTableModule,
   ]
 })
 export class PostModule { }

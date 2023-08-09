@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ListService } from 'src/app/list.service';
+import listModel from 'src/app/listModel';
+
 
 @Component({
   selector: 'app-edit-data-section',
@@ -7,4 +10,15 @@ import { Component } from '@angular/core';
 })
 export class EditDataSectionComponent {
 
+  currentItem: listModel | null = null;
+
+  constructor(private listService: ListService){
+    
+  }
+
+  ngOnInit(){
+    this.listService.getItem().subscribe((item) => {
+      this.currentItem = item
+    })
+  }
 }
