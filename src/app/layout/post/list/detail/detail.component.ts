@@ -18,6 +18,7 @@ export class DetailComponent {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.updateSelectedRoute(this.router.url, this.postIdString);
+        console.log('holis')
       }
     });
    }
@@ -27,9 +28,11 @@ export class DetailComponent {
     switch (url) {
       case `/layout/post/details/${id}/view`:
         this.selectedRoute = 'view';
+        console.log('jejeje')
       break;
       case `/layout/post/details/${id}/edit`:
         this.selectedRoute = 'edit';
+        console.log('jiji')
       break;
     }
   }

@@ -1,6 +1,12 @@
-<nav class="detail-navigate">
-    <a class="detail-navigate_links" routerLink='view' [class.selected]="'view' === selectedRoute">View</a>
-    <a class="detail-navigate_links" routerLink='edit' [class.selected]="'edit' === selectedRoute">Edit</a>
-</nav>
+<div class="list-view">
+    <app-list-view left></app-list-view>
+    <div>
+        <nav class="detail-navigate">
+            <a class="detail-navigate_links" routerLink='view' [class.selected]="'view' === selectedRoute">View</a>
+            <a class="detail-navigate_links" routerLink='edit' [class.selected]="'edit' === selectedRoute">Edit</a>
+        </nav>
+        
+        <router-outlet right></router-outlet>
+    </div>
 
-<router-outlet></router-outlet>
+</div>

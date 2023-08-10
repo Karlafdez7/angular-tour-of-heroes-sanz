@@ -8,8 +8,8 @@ import { Observable, BehaviorSubject, of } from 'rxjs';
 })
 export class ListService {
 
-  listApi!:listModel[];
-  public itemSubject: BehaviorSubject<listModel | null> = new BehaviorSubject<listModel | null>(null);
+  // listApi!:listModel[];
+  // public itemSubject: BehaviorSubject<listModel | null> = new BehaviorSubject<listModel | null>(null);
   private urlapi = 'https://jsonplaceholder.typicode.com/posts'
   
   constructor(private http: HttpClient) {}
@@ -23,11 +23,11 @@ export class ListService {
     return this.http.get<listModel>(url);
   }
 
-  saveDetails(item: listModel){
-    this.itemSubject.next(item)
-  }
+  // saveDetails(item: listModel){
+  //   this.itemSubject.next(item)
+  // }
 
-  getItem(): Observable<listModel | null> {
-    return this.itemSubject.asObservable();
-  }
+  // getItem(): Observable<listModel | null> {
+  //   return this.itemSubject.asObservable();
+  // }
 }

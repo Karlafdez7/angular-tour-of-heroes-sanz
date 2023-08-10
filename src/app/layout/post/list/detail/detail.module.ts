@@ -8,6 +8,9 @@ import { EditDataSectionComponent } from '../../component/edit-data-section/edit
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditPostComponent } from '../../component/edit-post/edit-post.component';
 import { ViewPostComponent } from '../../component/view-post/view-post.component';
+import { ListViewComponent } from '../../component/list-view/list-view.component';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { ViewPostComponent } from '../../component/view-post/view-post.component
     ViewPostComponent,
     PostDataSectionComponent,
     EditDataSectionComponent,
-    DetailComponent
+    DetailComponent,
+    ListViewComponent
+    
   ],
   imports: [
     CommonModule,
     DetailRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule
   ]
 })
 export class DetailModule { }
