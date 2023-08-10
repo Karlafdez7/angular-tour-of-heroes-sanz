@@ -1,12 +1,12 @@
 <h2 class="detail-title">Editar Post</h2>
-<form *ngIf="currentItem" class="edit-list-form">
-    <p class="detail-id"><span class="detail-id_id">ID:</span>{{ currentItem.id }}</p>
+<form *ngIf="postDetails" class="edit-list-form">
+    <p class="detail-id"><span class="detail-id_id">ID:</span>{{ postDetails.id }}</p>
     <label class='form-label' for=""><strong>Título:</strong></label>
-    <input class="form-input" type="text" value='{{ currentItem.title }}'>
+    <input class="form-input" type="text" value='{{ postDetails.title }}'>
     <label class='form-label' for=""><strong>Cuerpo:</strong></label>
-    <textarea class="form-textarea">{{ currentItem.body }}</textarea>
+    <textarea class="form-textarea">{{ postDetails.body }}</textarea>
 </form>
 
-<div *ngIf="!currentItem">
+<div *ngIf="!postDetails">
     <p>No se han encontrado detalles.</p>
 </div>

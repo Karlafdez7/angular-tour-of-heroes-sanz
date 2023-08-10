@@ -9,19 +9,22 @@ import { AuthServiceService } from 'src/app/auth-service.service';
 })
 export class LayoutComponent {
   selectedRoute!: string;
+  postIdString : string|null = this.route.snapshot.paramMap.get('id'); 
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private authService: AuthServiceService) {
-    this.updateSelectedRoute(this.router.url); // Inicializar selectedRoute con la ruta actual al cargar el componente
+
+  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) {
+    // this.updateSelectedRoute(this.router.url); // Inicializar selectedRoute con la ruta actual al cargar el componente
 
     // Suscripción a eventos de navegación para actualizar selectedRoute al cambiar la ruta
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.updateSelectedRoute(this.router.url);
+        this.updateSelectedRoute(this.router.url, this.postIdString);
+        console.log(this.router.url);
       }
     });
   }
 
-  private updateSelectedRoute(url: string): void {
+  private updateSelectedRoute(url: string, id:string|null): void {
     switch (url) {
       case '/layout/dashboard':
         this.selectedRoute = 'dashboard';
@@ -32,9 +35,12 @@ export class LayoutComponent {
       case '/layout/post/list':
         this.selectedRoute = 'list';
         break;
-      case '/layout/post/details/':
+      case `/layout/post/details/${id}/view`:
         this.selectedRoute = 'list';
-        break;
+      break;
+      case `/layout/post/details/${id}/edit`:
+        this.selectedRoute = 'list';
+      break;
       case '/layout/main':
         this.selectedRoute = 'main';
         break;

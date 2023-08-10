@@ -11,38 +11,26 @@ import listModel from 'src/app/listModel';
 export class DetailComponent {
 
   selectedRoute!: string;
+  postIdString : string|null = this.route.snapshot.paramMap.get('id'); 
+
 
   constructor(private listService: ListService, private route: ActivatedRoute, private router: Router) {
-    
-    this.updateSelectedRoute(this.router.url); // Inicializar selectedRoute con la ruta actual al cargar el componente
-
-    // Suscripción a eventos de navegación para actualizar selectedRoute al cambiar la ruta
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.updateSelectedRoute(this.router.url);
+        this.updateSelectedRoute(this.router.url, this.postIdString);
       }
     });
    }
 
-  // ngOnInit() {
-  //   const postIdString = this.route.snapshot.paramMap.get('id'); // Obtener el ID del parámetro de la ruta como string
-    
-  //   if (postIdString !== null) {
-  //     const postId = Number(postIdString); // Convertir el string a número
-  //     this.listService.getPostById(postId).subscribe((details: listModel) => {
-  //       this.listService.saveDetails(details);    
-  //       })
-  //     }
-  //   }
 
-    private updateSelectedRoute(url: string): void {
-      switch (url) {
-        case '/layout/post/details/1/view':
-          this.selectedRoute = 'view';
-        break;
-        case '/layout/post/details/1/edit':
-          this.selectedRoute = 'edit';
-        break;
+  private updateSelectedRoute(url: string, id:string|null): void {
+    switch (url) {
+      case `/layout/post/details/${id}/view`:
+        this.selectedRoute = 'view';
+      break;
+      case `/layout/post/details/${id}/edit`:
+        this.selectedRoute = 'edit';
+      break;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ListService } from 'src/app/list.service';
 import listModel from 'src/app/listModel';
 
@@ -9,16 +9,6 @@ import listModel from 'src/app/listModel';
   styleUrls: ['./edit-data-section.component.sass']
 })
 export class EditDataSectionComponent {
+  @Input() postDetails!:listModel
 
-  currentItem: listModel | null = null;
-
-  constructor(private listService: ListService){
-    
-  }
-
-  ngOnInit(){
-    this.listService.getItem().subscribe((item) => {
-      this.currentItem = item
-    })
-  }
 }

@@ -10,16 +10,4 @@ import listModel from 'src/app/listModel';
 export class PostDataSectionComponent{
   @Input() postDetails!:listModel
 
-  // // itemDetails!: listModel;
-  // currentItem: listModel | null = null;
-
-  // constructor(private listService: ListService){}
-
-  // ngOnInit(){
-  //   this.listService.getItem().subscribe((item) => {
-  //     this.currentItem = item
-  //   })
-  //   // this.itemDetails = this.listService.itemSubject;
-  //   // console.log('3', this.itemDetails)
-  // }
 }
