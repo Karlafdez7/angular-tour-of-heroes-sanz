@@ -1,8 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
-import { ListService } from 'src/app/list.service';
-import listModel from 'src/app/listModel';
 
 @Component({
   selector: 'app-detail',

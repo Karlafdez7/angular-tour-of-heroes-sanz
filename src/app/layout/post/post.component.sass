@@ -1,9 +1,17 @@
-.post
+.grid
     display: grid
     grid-template-columns: 1fr 1fr
+    grid-template-rows: 100px 1fr
+    gap: 20px
 
-.grid-container 
-  display: grid
-  grid-template-columns: 5px 1fr 1fr
-  gap: 20px 
-  margin: 20px
+.app-list
+    grid-column: 1/2
+    grid-row: 2/3
+
+.app-detail
+    grid-column: 2/3
+    grid-row: 2/3
+
+.app-search
+    grid-column: 1/2
+    grid-row: 1/2

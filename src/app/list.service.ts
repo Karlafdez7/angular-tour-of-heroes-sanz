@@ -26,11 +26,4 @@ export class ListService {
   setSelectItem(item: listModel | null){
     this.itemSubject.next(item)
   }
-  // saveDetails(item: listModel){
-  //   this.itemSubject.next(item)
-  // }
-
-  // getItem(): Observable<listModel | null> {
-  //   return this.itemSubject.asObservable();
-  // }
 }

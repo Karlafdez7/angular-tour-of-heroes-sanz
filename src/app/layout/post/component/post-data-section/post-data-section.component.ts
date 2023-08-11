@@ -1,5 +1,4 @@
 import { Component,Input, OnInit } from '@angular/core';
-import { ListService } from 'src/app/list.service';
 import listModel from 'src/app/listModel';
 
 @Component({

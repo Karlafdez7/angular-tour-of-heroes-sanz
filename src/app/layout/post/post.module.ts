@@ -12,7 +12,7 @@ import { ViewPostComponent } from './list/detail/view-post/view-post.component';
 import { EditPostComponent } from './list/detail/edit-post/edit-post.component';
 import { PostDataSectionComponent } from './component/post-data-section/post-data-section.component';
 import { EditDataSectionComponent } from './component/edit-data-section/edit-data-section.component';
-import { LandingPostComponent } from './landing-post/landing-post.component';
+import { SearchComponent } from './component/search/search.component';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { LandingPostComponent } from './landing-post/landing-post.component';
     PostDataSectionComponent,
     EditDataSectionComponent,
     DetailComponent,
-    LandingPostComponent
+    SearchComponent,
   ],
   imports: [
     CommonModule,

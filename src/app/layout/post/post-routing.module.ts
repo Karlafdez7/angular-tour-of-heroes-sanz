@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PostComponent } from './post.component';
-import { ListComponent } from './list/list.component';
 import { DetailComponent } from './list/detail/detail.component';
 import { ViewPostComponent } from './list/detail/view-post/view-post.component';
 import { EditPostComponent } from './list/detail/edit-post/edit-post.component';

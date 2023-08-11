@@ -69,11 +69,3 @@ export class HeroService {
     return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 1; 
   }
 }
-// private getPost():listModel[]{
-
-//   const listApi= this.http.get<listModel[]>(this.urlapi)
-//   return listApi;
-//  }
-// getItems(id:number): Observable<listModel|undefined> {
-//   return of (this.getPost().find(item => item.id === id));
-// }
