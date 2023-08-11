@@ -1,4 +1,4 @@
-<nav class="detail-navigate">
+<nav class="detail-navigate" *ngIf="postIdString">
     <a class="detail-navigate_links" routerLink='view' [class.selected]="'view' === selectedRoute">View</a>
     <a class="detail-navigate_links" routerLink='edit' [class.selected]="'edit' === selectedRoute">Edit</a>
 </nav>

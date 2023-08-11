@@ -12,7 +12,7 @@ import { ListService } from '../../../list.service'
 export class ListComponent  implements OnInit{
 
   listApi: listModel[] = [];
-  displayedColumns: string[] = ['id', 'title', 'body'];
+  displayedColumns: string[] = ['id', 'title'];
   dataSource: listModel[] = [];
  
   constructor(private listService: ListService, private route: ActivatedRoute, private router : Router){

@@ -23,11 +23,14 @@ export class ListService {
     return this.http.get<listModel>(url);
   }
 
-  saveDetails(item: listModel){
+  setSelectItem(item: listModel | null){
     this.itemSubject.next(item)
   }
+  // saveDetails(item: listModel){
+  //   this.itemSubject.next(item)
+  // }
 
-  getItem(): Observable<listModel | null> {
-    return this.itemSubject.asObservable();
-  }
+  // getItem(): Observable<listModel | null> {
+  //   return this.itemSubject.asObservable();
+  // }
 }

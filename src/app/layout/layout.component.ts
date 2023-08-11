@@ -32,7 +32,7 @@ export class LayoutComponent {
       case '/layout/heroes':
         this.selectedRoute = 'heroes';
         break;
-      case '/layout/post/list':
+      case '/layout/post':
         this.selectedRoute = 'list';
         break;
       case `/layout/post/details/${id}/view`:
@@ -54,7 +54,7 @@ export class LayoutComponent {
         this.selectedRoute = 'main';
         break;
       default:
-        this.selectedRoute = '';
+        this.selectedRoute = 'list';
         break;
     }
   }

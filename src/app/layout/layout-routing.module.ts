@@ -4,7 +4,7 @@ import { LayoutComponent } from './layout.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import {AuthGuard} from '../auth-guard.guard'
+import { AuthGuard } from '../auth-guard.guard'
 
 const routes: Routes = [
   { path: '', 
