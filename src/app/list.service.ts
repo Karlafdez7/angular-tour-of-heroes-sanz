@@ -10,7 +10,7 @@ export class ListService {
 
   listApi!:listModel[];
   public itemSubject: BehaviorSubject<listModel | null> = new BehaviorSubject<listModel | null>(null);
-  private urlapi = 'https://jsonplaceholder.typicode.com/posts'
+  private urlapi = 'https://staging-api.clima.center/workshops'
   
   constructor(private http: HttpClient) {}
 

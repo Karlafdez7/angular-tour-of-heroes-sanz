@@ -1,8 +1,11 @@
 <div *ngIf="postDetails">
     <h2 class="post-data-title">Detalles del Post</h2>
     <p class="post-data-item"><span class="post-data-label">ID:</span> {{ postDetails.id }}</p>
-    <p class="post-data-item"><span class="post-data-label">Título:</span> {{ postDetails.title }}</p>
-    <p class="post-data-item"><span class="post-data-label">Cuerpo:</span> {{ postDetails.body }}</p>
+    <p class="post-data-item"><span class="post-data-label">Nombre:</span> {{ postDetails.name }}</p>
+    <p class="post-data-item"><span class="post-data-label">Email:</span> {{ postDetails.email }}</p>
+    <p class="post-data-item"><span class="post-data-label">Dirección:</span> {{ postDetails.address }}</p>
+    <p class="post-data-item"><span class="post-data-label">Ciudad:</span> {{ postDetails.city }}</p>
+    <p class="post-data-item"><span class="post-data-label">Provincia:</span> {{ postDetails.province }}</p>
 </div>
 
 <div *ngIf="!postDetails">

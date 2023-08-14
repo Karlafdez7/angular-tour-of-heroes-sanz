@@ -13,7 +13,7 @@ export class ListComponent  implements OnInit{
   
   @Input() filter = '';
   listApi: listModel[] = [];
-  displayedColumns: string[] = ['id', 'title'];
+  displayedColumns: string[] = ['id', 'name'];
   dataSource: listModel[] = [];
   @Input() searchInput!: string;
   constructor(private listService: ListService, private route: ActivatedRoute, private router : Router){
@@ -39,7 +39,7 @@ export class ListComponent  implements OnInit{
 
   applyFilter(value: string) {
     value = value.trim().toLowerCase(); // Convertir a minúsculas y eliminar espacios en blanco
-    this.dataSource = this.listApi.filter(item => item.title.toLowerCase().includes(value));
+    this.dataSource = this.listApi.filter(item => item.name.toLowerCase().includes(value));
   }
   
 

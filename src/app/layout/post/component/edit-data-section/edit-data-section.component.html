@@ -1,10 +1,17 @@
 <h2 class="detail-title">Editar Post</h2>
 <form *ngIf="postDetails" class="edit-list-form">
     <p class="detail-id"><span class="detail-id_id">ID:</span>{{ postDetails.id }}</p>
-    <label class='form-label' for=""><strong>Título:</strong></label>
-    <input class="form-input" type="text" value='{{ postDetails.title }}'>
-    <label class='form-label' for=""><strong>Cuerpo:</strong></label>
-    <textarea class="form-textarea">{{ postDetails.body }}</textarea>
+    <label class='form-label' for=""><strong>Nombre:</strong></label>
+    <input class="form-input" type="text" value='{{ postDetails.name }}'>
+    <label class='form-label' for=""><strong>Email:</strong></label>
+    <input class="form-input" type="text" value='{{ postDetails.email }}'>
+    <label class='form-label' for=""><strong>Dirección:</strong></label>
+    <input class="form-input" type="text" value='{{ postDetails.address }}'>
+    <label class='form-label' for=""><strong>Ciudad:</strong></label>
+    <input class="form-input" type="text" value='{{ postDetails.city }}'>
+    <label class='form-label' for=""><strong>Provincia:</strong></label>
+    <input class="form-input" type="text" value='{{ postDetails.province }}'>
+    
 </form>
 
 <div *ngIf="!postDetails">
