@@ -11,7 +11,6 @@ import { ListService } from '../../../list.service'
 })
 export class ListComponent  implements OnInit{
   
-  @Input() filter = '';
   listApi: listModel[] = [];
   displayedColumns: string[] = ['id', 'title'];
   dataSource: listModel[] = [];

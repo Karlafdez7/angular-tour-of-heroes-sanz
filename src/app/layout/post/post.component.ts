@@ -1,4 +1,4 @@
-import { Component, ViewChild,AfterViewInit, Output  } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { SearchComponent } from './component/search/search.component';
 import { ListComponent } from './list/list.component';
 
@@ -10,11 +10,10 @@ import { ListComponent } from './list/list.component';
 export class PostComponent {
   @ViewChild(SearchComponent) searchComponent!: SearchComponent;
   @ViewChild(ListComponent) listComponent!: ListComponent;
-  filteredValue = '';
+
 
   
   onSearchValueChange(value: string) {
-    this.filteredValue = value;
     this.listComponent.applyFilter(value);
   }
 
