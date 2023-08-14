@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,7 +32,8 @@ import { SearchComponent } from './component/search/search.component';
     CommonModule,
     PostRoutingModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule,
   ]
 })
 export class PostModule { }
