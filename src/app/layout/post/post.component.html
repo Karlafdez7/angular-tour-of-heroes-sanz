@@ -1,5 +1,7 @@
 <div class="grid">
     <app-search (searchValueChanged)="onSearchValueChange($event)" class="app-search"></app-search>
-    <app-list  class="app-list"></app-list>
+    <app-list (selectedRowsChanged)="onSelectedRowsChange($event)" class="app-list"></app-list>
     <app-detail class="app-detail"></app-detail>
 </div>
+
+<app-selected-details ></app-selected-details>

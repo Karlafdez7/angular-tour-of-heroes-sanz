@@ -4,6 +4,7 @@ import { PostComponent } from './post.component';
 import { DetailComponent } from './list/detail/detail.component';
 import { ViewPostComponent } from './list/detail/view-post/view-post.component';
 import { EditPostComponent } from './list/detail/edit-post/edit-post.component';
+import { SelectedDetailsComponent } from './list/selected-details/selected-details.component';
 
 const routes: Routes = [{ path: '', component: PostComponent, children: [
   { path: 'details/:id', component: DetailComponent, children: [
@@ -11,7 +12,9 @@ const routes: Routes = [{ path: '', component: PostComponent, children: [
     { path: 'view', component: ViewPostComponent},
     { path: 'edit', component: EditPostComponent }
   ]},
-  
+  {
+    path: 'selected-details', component: SelectedDetailsComponent 
+  }
   ]
 }]
 
