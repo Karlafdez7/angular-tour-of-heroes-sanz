@@ -7,10 +7,7 @@ import listModel from 'src/app/listModel';
   styleUrls: ['./selected-details.component.sass']
 })
 export class SelectedDetailsComponent {
-  selectedRows: listModel[] = []
+  @Input() selectedRows: listModel[] = []
 
-  saveSelectedRows(list: listModel[]){
-    this.selectedRows = list
-    console.log('list details', list)
-  }
+
 }

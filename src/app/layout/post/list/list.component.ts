@@ -35,9 +35,9 @@ export class ListComponent  implements OnInit{
     });
   }
   
-  onSelectedRowsChange(){
-    this.selectedRowsChanged.emit(this.selectedRows);
-  }
+  // onSelectedRowsChange(){
+  //   this.selectedRowsChanged.emit(this.selectedRows);
+  // }
   
 
   // onSelect(id: number): void {
@@ -62,6 +62,7 @@ export class ListComponent  implements OnInit{
       this.router.navigate(['layout/post']);
     }
     this.updateAllSelectedStatus();
+    this.selectedRowsChanged.emit(this.selectedRows);
 
     
     console.log('all1',this.allSelected, 'rows1', this.selectedRows)

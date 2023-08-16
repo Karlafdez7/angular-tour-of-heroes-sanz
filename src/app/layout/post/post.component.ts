@@ -13,16 +13,15 @@ export class PostComponent {
   //@ViewChild(SearchComponent) searchComponent!: SearchComponent;
   @ViewChild(ListComponent) listComponent!: ListComponent;
   @ViewChild(SelectedDetailsComponent) selectedDetailsComponent!: SelectedDetailsComponent;
-  @Input() selectedRows: listModel[] = []
+  selectedRows: listModel[] = []
 
   
   onSearchValueChange(value: string) {
     this.listComponent.applyFilter(value);
   }
 
-  onSelectedRowsChange(list: listModel[]){
-    this.selectedDetailsComponent.saveSelectedRows(list)
-    console.log('postcomponent', list)
+  onSelectedRowsChange(rows: listModel[]){
+    this.selectedRows = rows;
   }
 
 
