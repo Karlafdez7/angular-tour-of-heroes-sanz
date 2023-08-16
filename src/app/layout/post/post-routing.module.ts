@@ -7,14 +7,15 @@ import { EditPostComponent } from './list/detail/edit-post/edit-post.component';
 import { SelectedDetailsComponent } from './list/selected-details/selected-details.component';
 
 const routes: Routes = [{ path: '', component: PostComponent, children: [
-  { path: 'details/:id', component: DetailComponent, children: [
-    { path: '', redirectTo: 'view', pathMatch: 'full' },
-    { path: 'view', component: ViewPostComponent},
-    { path: 'edit', component: EditPostComponent }
-  ]},
-  {
-    path: 'selected-details', component: SelectedDetailsComponent 
-  }
+    {
+      path: 'selected', component: SelectedDetailsComponent 
+    },
+    { path: 'details/:id', component: DetailComponent, children: [
+        { path: '', redirectTo: 'view', pathMatch: 'full' },
+        { path: 'view', component: ViewPostComponent},
+        { path: 'edit', component: EditPostComponent }
+      ]
+    }
   ]
 }]
 

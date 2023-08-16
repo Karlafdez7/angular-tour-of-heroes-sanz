@@ -34,41 +34,27 @@ export class ListComponent  implements OnInit{
       this.dataSource = list;
     });
   }
-  
-  // onSelectedRowsChange(){
-  //   this.selectedRowsChanged.emit(this.selectedRows);
-  // }
-  
 
-  // onSelect(id: number): void {
-  //   if (id !== undefined && id !== null) {
-  //     this.router.navigate(['layout/post/details', id]);
-  //   } else {
-  //     console.error('Item ID is undefined or null.');
-  //   }
-  // }
+  onSelect(id: number): void {
+    if (id !== undefined && id !== null) {
+      this.router.navigate(['layout/post/details', id]);
+    } else {
+      console.error('Item ID is undefined or null.');
+    }
+  }
 
   toggleSelection(element: listModel) {
     const index = this.selectedRows.indexOf(element);
     if (index === -1) {
       this.selectedRows.push(element);
-      if (element.id !== undefined && element.id !== null) {
-        this.router.navigate(['layout/post/details', element.id]);
-      } else {
-        console.error('Item ID is undefined or null.');
-      }
+
     } else {
       this.selectedRows.splice(index, 1);
-      this.router.navigate(['layout/post']);
     }
+
     this.updateAllSelectedStatus();
     this.selectedRowsChanged.emit(this.selectedRows);
-
-    
-    console.log('all1',this.allSelected, 'rows1', this.selectedRows)
   }
-
- 
 
   toggleAllSelection() {
     if (this.allSelected) {
@@ -77,10 +63,8 @@ export class ListComponent  implements OnInit{
       this.selectedRows = this.dataSource.slice();
     }
     this.allSelected = !this.allSelected;
-    console.log('all',this.allSelected, 'rows', this.selectedRows)
+    this.selectedRowsChanged.emit(this.selectedRows);
   }
-
- 
 
   updateAllSelectedStatus() {
     this.allSelected = this.selectedRows.length === this.dataSource.length;
@@ -88,7 +72,7 @@ export class ListComponent  implements OnInit{
 
   isSelected(element: listModel): boolean {
     return this.selectedRows.indexOf(element) !== -1;
-}
+  }
 
   applyFilter(value: string) {
     value = value.trim().toLowerCase(); // Convertir a minúsculas y eliminar espacios en blanco

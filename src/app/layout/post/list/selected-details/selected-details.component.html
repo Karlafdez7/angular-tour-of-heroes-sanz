@@ -1,3 +1,8 @@
-<a *ngFor="let hero of selectedRows" >
-    <h4 class="module">{{hero.title}}</h4>
-</a>
+<ul *ngFor="let row of selectedRows" >
+    <li class="module">
+        <h3>Id: {{row.id}}</h3>
+        <h4>Título: {{row.title}}</h4>
+        <p>Cuerpo: {{row.body}}</p>
+    </li>
+    <br>
+</ul>
