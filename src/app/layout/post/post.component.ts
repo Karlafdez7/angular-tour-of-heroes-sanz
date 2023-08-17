@@ -1,8 +1,8 @@
-import { Component, Input, ViewChild} from '@angular/core';
-import { SearchComponent } from './component/search/search.component';
+import { Component, ViewChild} from '@angular/core';
 import { ListComponent } from './list/list.component';
 import listModel from 'src/app/listModel';
 import { SelectedDetailsComponent } from './list/selected-details/selected-details.component';
+import {  Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,11 +10,11 @@ import { SelectedDetailsComponent } from './list/selected-details/selected-detai
   styleUrls: ['./post.component.sass']
 })
 export class PostComponent {
-  //@ViewChild(SearchComponent) searchComponent!: SearchComponent;
   @ViewChild(ListComponent) listComponent!: ListComponent;
   @ViewChild(SelectedDetailsComponent) selectedDetailsComponent!: SelectedDetailsComponent;
   selectedRows: listModel[] = []
 
+  constructor( private router : Router){}
   
   onSearchValueChange(value: string) {
     this.listComponent.applyFilter(value);
@@ -24,5 +24,14 @@ export class PostComponent {
     this.selectedRows = rows;
   }
 
+  sendSelectedRows(){
+    const navigateExtras: NavigationExtras = {
+      state:{
+        selectedRows: this.selectedRows
+      }
+    };
+    this.router.navigate(['layout/selectedDetails'], navigateExtras)
+  }
+  
 
 }

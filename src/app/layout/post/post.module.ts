@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonModule} from '@angular/material/button';
+
 
 import { PostRoutingModule } from './post-routing.module';
 import { PostComponent } from './post.component';
@@ -38,6 +40,7 @@ import { SelectedDetailsComponent } from './list/selected-details/selected-detai
     MatFormFieldModule,
     FormsModule,
     MatCheckboxModule,
+    MatButtonModule,
   ]
 })
 export class PostModule { }

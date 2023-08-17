@@ -1,7 +1,9 @@
 <div class="grid">
+    <button mat-raised-button (click)="sendSelectedRows()">Ir a detalles</button>
     <app-search (searchValueChanged)="onSearchValueChange($event)" class="app-search"></app-search>
     <app-list (selectedRowsChanged)="onSelectedRowsChange($event)" class="app-list"></app-list>
     <app-detail class="app-detail"></app-detail>
 </div>
 
-<app-selected-details [selectedRows]="selectedRows"></app-selected-details>
+
+ 

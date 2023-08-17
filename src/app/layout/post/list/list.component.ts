@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import listModel from 'src/app/listModel';
 import { ListService } from '../../../list.service';
-import taskModel from 'src/app/taskModel'
 
 
 @Component({
@@ -64,6 +63,7 @@ export class ListComponent  implements OnInit{
     }
     this.allSelected = !this.allSelected;
     this.selectedRowsChanged.emit(this.selectedRows);
+    console.log('list', this.selectedRows)
   }
 
   updateAllSelectedStatus() {
