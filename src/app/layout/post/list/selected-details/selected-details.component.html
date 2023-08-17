@@ -1,8 +1,8 @@
+<h2 class="selected-details-title">TUS DETALLES</h2>
 <ul *ngFor="let row of selectedRows" >
-    <li class="module">
-        <h3>Id: {{row.id}}</h3>
-        <h4>Título: {{row.title}}</h4>
-        <p>Cuerpo: {{row.body}}</p>
-    </li>
+    <li>
+        <p class="selected-details-item"><span class="selected-details-label">ID:</span> {{ row.id }}</p>
+        <p class="selected-details-item"><span class="selected-details-label">Título:</span> {{ row.title }}</p>
+        <p class="selected-details-item"><span class="selected-details-label">Cuerpo:</span> {{ row.body }}</p>    </li>
     <br>
 </ul>
