@@ -4,7 +4,7 @@
             <mat-checkbox [checked]="allSelected" (change)="toggleAllSelection()" ></mat-checkbox>
         </th>
         <td mat-cell *matCellDef="let element" class="list-item">
-            <mat-checkbox [checked]="isSelected(element)" (change)="toggleSelection(element)"></mat-checkbox>
+            <mat-checkbox (click)="$event.stopPropagation()" [checked]="isSelected(element)" (change)="toggleSelection(element)"></mat-checkbox>
         </td>    
     </ng-container> 
     

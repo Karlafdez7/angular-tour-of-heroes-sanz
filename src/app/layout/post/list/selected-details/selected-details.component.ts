@@ -8,8 +8,8 @@ import listModel from 'src/app/listModel';
 })
 export class SelectedDetailsComponent implements OnInit{
 
-  selectedRows: listModel[] = []
-
+  selectedRows: listModel[] = [];
+  deleteRow!: string;
 
   ngOnInit(){
     const state= window.history.state;
@@ -17,6 +17,10 @@ export class SelectedDetailsComponent implements OnInit{
       this.selectedRows= state.selectedRows
     }
   }
+
+  // onDelete(){
+  //   console.log(this.deleteRow)
+  // }
 }
 
 

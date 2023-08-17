@@ -40,9 +40,12 @@ export class ListComponent  implements OnInit{
     } else {
       console.error('Item ID is undefined or null.');
     }
+
+    console.log('esto es onSelect')
   }
 
   toggleSelection(element: listModel) {
+    
     const index = this.selectedRows.indexOf(element);
     if (index === -1) {
       this.selectedRows.push(element);
@@ -53,6 +56,7 @@ export class ListComponent  implements OnInit{
 
     this.updateAllSelectedStatus();
     this.selectedRowsChanged.emit(this.selectedRows);
+    console.log('esto es toggleSelection')
   }
 
   toggleAllSelection() {

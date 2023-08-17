@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 import { PostRoutingModule } from './post-routing.module';
@@ -41,6 +42,7 @@ import { SelectedDetailsComponent } from './list/selected-details/selected-detai
     FormsModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatRadioModule,
   ]
 })
 export class PostModule { }
