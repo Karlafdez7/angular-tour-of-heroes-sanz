@@ -13,9 +13,9 @@ export class ListService {
   
   constructor(private http: HttpClient) {}
 
-  getPost(){
-    return this.http.get<listModel[]>(this.urlapi);
-  }
+  // getPost(){
+  //   return this.http.get<listModel[]>(this.urlapi);
+  // }
 
   getPostById(id: number): Observable<listModel> {
     const url = `${this.urlapi}/${id}`;
@@ -25,7 +25,25 @@ export class ListService {
   deleteById(id: number): Observable<listModel> {
     const url = `${this.urlapi}/${id}`;
     return this.http.delete<listModel>(url).pipe(tap(() => {
-      this.listApi = this.listApi.filter(item => item.id !== id)
+      this.listApi = this.listApi.filter(item => item.id !== id);
+      localStorage.setItem('listData', JSON.stringify(this.listApi));
     }));
+  }
+
+  getListData(): Observable<listModel[]> {
+    const storedData = localStorage.getItem('listData');
+
+    if (storedData) {
+      this.listApi = JSON.parse(storedData);
+      return of(this.listApi);
+
+    } else {
+      return this.http.get<listModel[]>(this.urlapi).pipe(
+        tap(apiData => {
+          this.listApi = apiData;
+          localStorage.setItem('listData', JSON.stringify(apiData)); // Save in localStorage
+        })
+      );
+    }
   }
 }

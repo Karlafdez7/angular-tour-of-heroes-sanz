@@ -19,13 +19,6 @@ export class SelectedDetailsComponent implements OnInit{
     if (state && state.selectedRows){
       this.selectedRows= state.selectedRows
     }
-
-    // this.listService.itemSubject.subscribe(item => {
-    //   if (item && item.id) {
-    //     this.selectedRows = this.selectedRows.filter(row => row.id !== item.id);
-    //     this.idRow = '';
-    //   }
-    // });
   }
 
   onDeleteRow(id: string){
