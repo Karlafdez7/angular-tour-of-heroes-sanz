@@ -8,7 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatIconModule} from '@angular/material/icon';
 
 import { PostRoutingModule } from './post-routing.module';
 import { PostComponent } from './post.component';
@@ -43,6 +43,7 @@ import { SelectedDetailsComponent } from './list/selected-details/selected-detai
     MatCheckboxModule,
     MatButtonModule,
     MatRadioModule,
+    MatIconModule
   ]
 })
 export class PostModule { }

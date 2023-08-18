@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import listModel from './listModel'
-import { Observable, BehaviorSubject, of } from 'rxjs';
+import { Observable, BehaviorSubject, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListService {
 
-  listApi!:listModel[];
-  public itemSubject: BehaviorSubject<listModel | null> = new BehaviorSubject<listModel | null>(null);
+  listApi:listModel[] = [];
   private urlapi = 'https://jsonplaceholder.typicode.com/posts'
   
   constructor(private http: HttpClient) {}
@@ -23,7 +22,10 @@ export class ListService {
     return this.http.get<listModel>(url);
   }
 
-  setSelectItem(item: listModel | null){
-    this.itemSubject.next(item)
+  deleteById(id: number): Observable<listModel> {
+    const url = `${this.urlapi}/${id}`;
+    return this.http.delete<listModel>(url).pipe(tap(() => {
+      this.listApi = this.listApi.filter(item => item.id !== id)
+    }));
   }
 }

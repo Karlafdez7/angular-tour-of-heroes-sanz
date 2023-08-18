@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListService } from 'src/app/list.service';
 import listModel from 'src/app/listModel';
 
 @Component({
@@ -9,18 +10,31 @@ import listModel from 'src/app/listModel';
 export class SelectedDetailsComponent implements OnInit{
 
   selectedRows: listModel[] = [];
-  deleteRow!: string;
+  idRow!: string;
+
+  constructor(private listService: ListService){}
 
   ngOnInit(){
     const state= window.history.state;
     if (state && state.selectedRows){
       this.selectedRows= state.selectedRows
     }
+
+    // this.listService.itemSubject.subscribe(item => {
+    //   if (item && item.id) {
+    //     this.selectedRows = this.selectedRows.filter(row => row.id !== item.id);
+    //     this.idRow = '';
+    //   }
+    // });
   }
 
-  // onDelete(){
-  //   console.log(this.deleteRow)
-  // }
+  onDeleteRow(id: string){
+    const idNumber = parseInt(id)
+    this.listService.deleteById(idNumber).subscribe(() => {
+      this.selectedRows = this.selectedRows.filter(row => row.id !== idNumber);
+      this.idRow = ''
+    })
+  }
 }
 
 
