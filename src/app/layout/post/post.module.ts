@@ -7,8 +7,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
-import {MatRadioModule} from '@angular/material/radio';
-
 
 import { PostRoutingModule } from './post-routing.module';
 import { PostComponent } from './post.component';
@@ -19,7 +17,6 @@ import { EditPostComponent } from './list/detail/edit-post/edit-post.component';
 import { PostDataSectionComponent } from './component/post-data-section/post-data-section.component';
 import { EditDataSectionComponent } from './component/edit-data-section/edit-data-section.component';
 import { SearchComponent } from './component/search/search.component';
-import { SelectedDetailsComponent } from './list/selected-details/selected-details.component';
 
 
 @NgModule({
@@ -32,7 +29,7 @@ import { SelectedDetailsComponent } from './list/selected-details/selected-detai
     EditDataSectionComponent,
     DetailComponent,
     SearchComponent,
-    SelectedDetailsComponent,
+
   ],
   imports: [
     CommonModule,
@@ -42,7 +39,7 @@ import { SelectedDetailsComponent } from './list/selected-details/selected-detai
     FormsModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatRadioModule,
+
   ]
 })
 export class PostModule { }

@@ -11,6 +11,7 @@ export class ListService {
   listApi!:listModel[];
   public itemSubject: BehaviorSubject<listModel | null> = new BehaviorSubject<listModel | null>(null);
   private urlapi = 'https://jsonplaceholder.typicode.com/posts'
+  filterValue!: string;
   
   constructor(private http: HttpClient) {}
 
@@ -26,4 +27,9 @@ export class ListService {
   setSelectItem(item: listModel | null){
     this.itemSubject.next(item)
   }
+
+  onSendFilterValue(value:string){
+    this.filterValue=value;
+  }
+
 }
