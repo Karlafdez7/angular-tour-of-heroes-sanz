@@ -15,6 +15,7 @@ import { FilterSelectedDetailsComponent } from './post/component/filter-selected
 import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import {MatInputModule} from '@angular/material/input';
     MatAutocompleteModule,
     MatInputModule,
     ReactiveFormsModule,
-
+    MatIconModule,
   ]
 })
 export class LayoutModule { }

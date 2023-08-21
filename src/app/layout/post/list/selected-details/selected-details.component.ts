@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Observable } from 'rxjs';
-=======
-import { Component, OnInit } from '@angular/core';
->>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
+import { Observable, Subscription } from 'rxjs';
 import { ListService } from 'src/app/list.service';
 import listModel from 'src/app/listModel';
 
@@ -14,41 +10,31 @@ import listModel from 'src/app/listModel';
 })
 export class SelectedDetailsComponent implements OnInit{
 
-<<<<<<< HEAD
   @Output() selectedRows: listModel[] = [];
-  filterValue!: string;
+  // filterValue: Subscription;
   deleteRow!: string;
-=======
-  selectedRows: listModel[] = [];
   idRow!: string;
+  datoRecibido = this.listService.actualFilterValue;
 
-  constructor(private listService: ListService){}
->>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
-
-  constructor(private listService: ListService){}
+  constructor(private listService: ListService){
+    
+  }
 
   ngOnInit(){
-
-    if(!this.filterValue || this.filterValue===''){
       const state= window.history.state;
       if (state && state.selectedRows){
         this.selectedRows= state.selectedRows
       };
-    } else{
-      this.filterValue= this.listService.filterValue;
-      console.log('esto es el filteValue de Selected-details', this.filterValue)
-    }
-    }
 
-
+      this.listService.actualFilterValue.subscribe(filterValue => {
+        this.filterSelectedRows(filterValue); // Filtrar los detalles seleccionados
+      });
+    
+      
   }
 
-<<<<<<< HEAD
-  // onDelete(){
-  //   console.log(this.deleteRow)
-  // }
+    
 
-=======
   onDeleteRow(id: string){
     const idNumber = parseInt(id)
     this.listService.deleteById(idNumber).subscribe(() => {
@@ -56,8 +42,17 @@ export class SelectedDetailsComponent implements OnInit{
       this.idRow = ''
     })
   }
+
+  filterSelectedRows(filterValue: string) {
+    if (filterValue) {
+      // Filtrar los detalles seleccionados basados en el valor del filtro
+      this.selectedRows = this.selectedRows.filter(row =>
+        row.title.toLowerCase().includes(filterValue.toLowerCase())
+      );
+    }
+  }
 }
->>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
+
 
 
 

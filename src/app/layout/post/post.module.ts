@@ -7,11 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
-<<<<<<< HEAD
-=======
 import {MatRadioModule} from '@angular/material/radio';
-import {MatIconModule} from '@angular/material/icon';
->>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
 
 import { PostRoutingModule } from './post-routing.module';
 import { PostComponent } from './post.component';
@@ -44,12 +40,8 @@ import { SearchComponent } from './component/search/search.component';
     FormsModule,
     MatCheckboxModule,
     MatButtonModule,
-<<<<<<< HEAD
-
-=======
     MatRadioModule,
-    MatIconModule
->>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
+    
   ]
 })
 export class PostModule { }

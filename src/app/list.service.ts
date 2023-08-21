@@ -10,7 +10,9 @@ export class ListService {
 
   listApi:listModel[] = [];
   private urlapi = 'https://jsonplaceholder.typicode.com/posts'
-  filterValue!: string;
+  filterValue = new BehaviorSubject<string>('')
+  actualFilterValue = this.filterValue.asObservable()
+
   
   constructor(private http: HttpClient) {}
 
@@ -49,7 +51,7 @@ export class ListService {
   }
 
   onSendFilterValue(value:string){
-    this.filterValue=value;
+    this.filterValue.next(value);
   }
 
 }
