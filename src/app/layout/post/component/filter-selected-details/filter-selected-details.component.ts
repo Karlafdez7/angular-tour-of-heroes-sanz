@@ -12,27 +12,32 @@ import { ListService } from 'src/app/list.service';
   styleUrls: ['./filter-selected-details.component.sass']
 })
 export class FilterSelectedDetailsComponent implements OnInit {
-  postControl = new FormControl('');
+  
   @Input() selectedRows: listModel[]=[]
-  filteredPost!: Observable<string[]>;
+  // @Output() sendPost = new EventEmitter()
+  
+  postControl = new FormControl('');
+  filteredPost!: string[];
   filterValue!: string;
-  @Output()  sendPost = new EventEmitter()
 
 
   constructor(private listService: ListService){}
   ngOnInit() {
-    this.filteredPost = this.postControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
+    // this.filteredPost = this.postControl.valueChanges.pipe(
+    //   startWith(''),
+    //   map(value => this._filter(value || '')),
 
-    );
+    // );
 
+    this.postControl.valueChanges.subscribe(filterValue => {
+      this.filteredPost= this._filter(filterValue || '')
+    })
   }
   
   private _filter(value: string): string[] {
     this.filterValue = value.toLowerCase();
     const titleSelectedRows = this.selectedRows.map(item => item.title)
-
+    
     return titleSelectedRows.filter(option => option.toLowerCase().includes(this.filterValue));
     
   }
@@ -42,8 +47,15 @@ export class FilterSelectedDetailsComponent implements OnInit {
   // }
 
   selectPost(post: string){
-    // this.listService.onSendFilterValue(post); 
+    this.listService.onSendFilterValue(post); 
+
+
+    // if(post){
+    //   this.sendPost.emit(post)
+    // } else {
+    //   this.sendPost.emit(null)
+    // }
     // console.log('selectedPost', post)
-    this.sendPost.emit(post)
+    // this.sendPost.emit(post)
   }
 }

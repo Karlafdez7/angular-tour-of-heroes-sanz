@@ -51,7 +51,7 @@ export class ListService {
   }
 
   onSendFilterValue(value:string){
-    this.filterValue.next(value);
+      this.filterValue.next(value);
   }
 
 }

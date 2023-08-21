@@ -14,13 +14,14 @@ export class SelectedDetailsComponent implements OnInit{
   // filterValue: Subscription;
   deleteRow!: string;
   idRow!: string;
-  datoRecibido = this.listService.actualFilterValue;
+  // datoRecibido = this.listService.actualFilterValue;
 
   constructor(private listService: ListService){
     
   }
 
   ngOnInit(){
+
       const state= window.history.state;
       if (state && state.selectedRows){
         this.selectedRows= state.selectedRows
@@ -28,8 +29,7 @@ export class SelectedDetailsComponent implements OnInit{
 
       this.listService.actualFilterValue.subscribe(filterValue => {
         this.filterSelectedRows(filterValue); // Filtrar los detalles seleccionados
-      });
-    
+      });    
       
   }
 
