@@ -1,15 +1,23 @@
+<<<<<<< HEAD
 <h2 class="selected-details-title">TUS DETALLES </h2>
 <app-filter-selected-details [selectedRows]="selectedRows"></app-filter-selected-details>
 <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="deleteRow">
     <ul  >
+=======
+<h2 class="selected-details-title">TUS DETALLES</h2>
+<button [disabled]="!idRow" mat-fab color="accent" aria-label="Button with a delete icon" (click)="onDeleteRow(idRow)">
+    <mat-icon>delete</mat-icon>
+</button>
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="idRow">
+    <ul *ngIf="selectedRows">
+>>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
         <li>
             <mat-radio-button class="example-radio-button" *ngFor="let row of selectedRows" [value]="row.id" >
                 <p class="selected-details-item"><span class="selected-details-label">ID:</span> {{ row.id }}</p>
                 <p class="selected-details-item"><span class="selected-details-label">Título:</span> {{ row.title }}</p>
                 <p class="selected-details-item"><span class="selected-details-label">Cuerpo:</span> {{ row.body }}</p>   
+                <br>
             </mat-radio-button> 
         </li>
-        <br>
     </ul>
 </mat-radio-group>
-<div> Holis: {{deleteRow}}</div>

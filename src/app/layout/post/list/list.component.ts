@@ -28,10 +28,23 @@ export class ListComponent  implements OnInit{
   };
   
   ngOnInit() {
-    this.listService.getPost().subscribe((list:listModel[]) => {
-      this.listApi = list;
-      this.dataSource = list;
-    });
+    // this.listService.getPost().subscribe((list:listModel[]) => {
+    //   this.listApi = list;
+    //   this.dataSource = list;
+    // });
+    this.loadListData();
+  }
+
+  loadListData() {
+    this.listService.getListData().subscribe({
+      next: (data: listModel[]) => {
+        this.listApi = data;
+        this.dataSource = data;
+      },
+      error: (error) => {
+        console.error('Error al obtener los datos', error);
+      }
+  });
   }
 
   onSelect(id: number): void {

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
 import { ListService } from 'src/app/list.service';
 import listModel from 'src/app/listModel';
 
@@ -10,9 +14,16 @@ import listModel from 'src/app/listModel';
 })
 export class SelectedDetailsComponent implements OnInit{
 
+<<<<<<< HEAD
   @Output() selectedRows: listModel[] = [];
   filterValue!: string;
   deleteRow!: string;
+=======
+  selectedRows: listModel[] = [];
+  idRow!: string;
+
+  constructor(private listService: ListService){}
+>>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
 
   constructor(private listService: ListService){}
 
@@ -32,10 +43,21 @@ export class SelectedDetailsComponent implements OnInit{
 
   }
 
+<<<<<<< HEAD
   // onDelete(){
   //   console.log(this.deleteRow)
   // }
 
+=======
+  onDeleteRow(id: string){
+    const idNumber = parseInt(id)
+    this.listService.deleteById(idNumber).subscribe(() => {
+      this.selectedRows = this.selectedRows.filter(row => row.id !== idNumber);
+      this.idRow = ''
+    })
+  }
+}
+>>>>>>> bd7f00035b1d309ca5fed46e71e4d2b8d8251e12
 
 
 
