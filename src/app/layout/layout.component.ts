@@ -52,6 +52,9 @@ export class LayoutComponent {
       case '/layout/main/change-password':
         this.selectedRoute = 'main';
         break;
+      case '/layout/vehicle':
+        this.selectedRoute = 'vehicle';
+        break;
       default:
         this.selectedRoute = 'list';
         break;

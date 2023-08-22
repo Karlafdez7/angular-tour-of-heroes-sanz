@@ -18,6 +18,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 
@@ -31,6 +33,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NewHeroComponent,
     SelectedDetailsComponent,
     FilterSelectedDetailsComponent,
+    VehicleComponent,
+    SearchBarComponent,
   ],
   imports: [
     CommonModule,

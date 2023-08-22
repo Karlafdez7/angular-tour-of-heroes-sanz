@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import listModel from './listModel'
+import { Observable, BehaviorSubject, of } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class VehicleService {
+  listApi!:listModel[];
+  public itemSubject: BehaviorSubject<listModel | null> = new BehaviorSubject<listModel | null>(null);
+  private urlapi = 'https://staging-api.clima.center/workshops'
+
+  constructor(private http: HttpClient) {}
+
+  getPost(){
+    return this.http.get<listModel[]>(this.urlapi);
+  }
+
+  getPostById(id: number): Observable<listModel> {
+    const url = `${this.urlapi}/${id}`;
+    return this.http.get<listModel>(url);
+  }
+
+  setSelectItem(item: listModel | null){
+    this.itemSubject.next(item)
+  }
+}

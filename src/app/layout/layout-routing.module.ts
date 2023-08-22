@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { AuthGuard } from '../auth-guard.guard'
 import { SelectedDetailsComponent } from './post/list/selected-details/selected-details.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path:'dashboard', component: DashboardComponent},
     { path: 'details/:id', component: HeroDetailComponent},
     { path:'selectedDetails', component:SelectedDetailsComponent},
+    {path: 'vehicle', component: VehicleComponent},
     { path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule)},
     { path: 'post', loadChildren: () => import('./post/post.module').then(m => m.PostModule) }
   ]
