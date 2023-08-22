@@ -19,7 +19,6 @@ export class LayoutComponent {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.updateSelectedRoute(this.router.url, this.postIdString);
-        console.log(this.router.url);
       }
     });
   }

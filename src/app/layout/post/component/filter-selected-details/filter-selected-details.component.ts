@@ -1,10 +1,6 @@
 import { Component,EventEmitter,Input,OnInit, Output } from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
-import {NgFor, AsyncPipe} from '@angular/common';
 import listModel from 'src/app/listModel';
-import { ListService } from 'src/app/list.service';
 
 @Component({
   selector: 'app-filter-selected-details',
@@ -13,49 +9,37 @@ import { ListService } from 'src/app/list.service';
 })
 export class FilterSelectedDetailsComponent implements OnInit {
   
-  @Input() selectedRows: listModel[]=[]
-  // @Output() sendPost = new EventEmitter()
-  
+  @Output() sendPost = new EventEmitter<string>()
+  listApi: listModel[]=[];
   postControl = new FormControl('');
   filteredPost!: string[];
   filterValue!: string;
+  isLoading: boolean= false;
 
-
-  constructor(private listService: ListService){}
   ngOnInit() {
-    // this.filteredPost = this.postControl.valueChanges.pipe(
-    //   startWith(''),
-    //   map(value => this._filter(value || '')),
 
-    // );
+    const storedData = localStorage.getItem('listData');
+    if (storedData) {
+      this.listApi = JSON.parse(storedData);
+    }
+    this.postControl.valueChanges.subscribe(filterValue => {      
+      this.isLoading=true;
+      setTimeout(() => {
+        this.filteredPost= this._filter(filterValue || '')
+      }, 3000)
+      })
 
-    this.postControl.valueChanges.subscribe(filterValue => {
-      this.filteredPost= this._filter(filterValue || '')
-    })
-  }
-  
+    }
+    
   private _filter(value: string): string[] {
     this.filterValue = value.toLowerCase();
-    const titleSelectedRows = this.selectedRows.map(item => item.title)
-    
-    return titleSelectedRows.filter(option => option.toLowerCase().includes(this.filterValue));
-    
-  }
-
-  // onSendFilterValue(value:string){
-  //  this.listService.onSendFilterValue(value); 
-  // }
+    const titleListApi = this.listApi.map(item => item.title)
+    this.isLoading=false;
+    return titleListApi.filter(option => option.toLowerCase().includes(this.filterValue));
+  
+}
 
   selectPost(post: string){
-    this.listService.onSendFilterValue(post); 
-
-
-    // if(post){
-    //   this.sendPost.emit(post)
-    // } else {
-    //   this.sendPost.emit(null)
-    // }
-    // console.log('selectedPost', post)
-    // this.sendPost.emit(post)
+    this.sendPost.emit(post)
   }
 }

@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
 import { ListService } from 'src/app/list.service';
 import listModel from 'src/app/listModel';
 
@@ -10,30 +9,24 @@ import listModel from 'src/app/listModel';
 })
 export class SelectedDetailsComponent implements OnInit{
 
-  @Output() selectedRows: listModel[] = [];
-  // filterValue: Subscription;
+  selectedRows: listModel[] = [];
   deleteRow!: string;
   idRow!: string;
-  // datoRecibido = this.listService.actualFilterValue;
-
-  constructor(private listService: ListService){
-    
-  }
+  eventData!: string;
+  renderSelectedRows: listModel[]=[];
+  
+  constructor(private listService: ListService){}
 
   ngOnInit(){
 
       const state= window.history.state;
       if (state && state.selectedRows){
-        this.selectedRows= state.selectedRows
-      };
+        this.selectedRows= state.selectedRows;
+        this.renderSelectedRows = state.selectedRows; 
 
-      this.listService.actualFilterValue.subscribe(filterValue => {
-        this.filterSelectedRows(filterValue); // Filtrar los detalles seleccionados
-      });    
+      };
       
   }
-
-    
 
   onDeleteRow(id: string){
     const idNumber = parseInt(id)
@@ -46,10 +39,19 @@ export class SelectedDetailsComponent implements OnInit{
   filterSelectedRows(filterValue: string) {
     if (filterValue) {
       // Filtrar los detalles seleccionados basados en el valor del filtro
-      this.selectedRows = this.selectedRows.filter(row =>
+      const filterSelectedRows = this.selectedRows.filter(row =>
         row.title.toLowerCase().includes(filterValue.toLowerCase())
       );
+        if(filterSelectedRows.length > 0 ){
+          this.renderSelectedRows = filterSelectedRows;
+        } else{
+          this.renderSelectedRows= [];
+        }
     }
+  }
+
+  handleEvent(eventData: string){
+    this.filterSelectedRows(eventData);
   }
 }
 

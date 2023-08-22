@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import listModel from './listModel'
-import { Observable, BehaviorSubject, of, tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +10,10 @@ export class ListService {
 
   listApi:listModel[] = [];
   private urlapi = 'https://jsonplaceholder.typicode.com/posts'
-  filterValue = new BehaviorSubject<string>('')
-  actualFilterValue = this.filterValue.asObservable()
 
   
   constructor(private http: HttpClient) {}
 
-  // getPost(){
-  //   return this.http.get<listModel[]>(this.urlapi);
-  // }
 
   getPostById(id: number): Observable<listModel> {
     const url = `${this.urlapi}/${id}`;
@@ -48,10 +43,6 @@ export class ListService {
         })
       );
     }
-  }
-
-  onSendFilterValue(value:string){
-      this.filterValue.next(value);
   }
 
 }

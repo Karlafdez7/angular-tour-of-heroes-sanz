@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, Input, ViewChild} from '@angular/core';
 import { ListComponent } from './list/list.component';
 import listModel from 'src/app/listModel';
 import { SelectedDetailsComponent } from './list/selected-details/selected-details.component';
@@ -12,9 +12,11 @@ import {  Router, NavigationExtras } from '@angular/router';
 export class PostComponent {
   @ViewChild(ListComponent) listComponent!: ListComponent;
   @ViewChild(SelectedDetailsComponent) selectedDetailsComponent!: SelectedDetailsComponent;
-  selectedRows: listModel[] = []
+  selectedRows: listModel[] = [];
+  @Input() listApi: listModel[]=[];
 
-  constructor( private router : Router){}
+  constructor( private router : Router){
+  }
   
   onSearchValueChange(value: string) {
     this.listComponent.applyFilter(value);

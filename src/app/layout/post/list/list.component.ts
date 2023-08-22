@@ -53,8 +53,6 @@ export class ListComponent  implements OnInit{
     } else {
       console.error('Item ID is undefined or null.');
     }
-
-    console.log('esto es onSelect')
   }
 
   toggleSelection(element: listModel) {
@@ -69,7 +67,6 @@ export class ListComponent  implements OnInit{
 
     this.updateAllSelectedStatus();
     this.selectedRowsChanged.emit(this.selectedRows);
-    console.log('esto es toggleSelection')
   }
 
   toggleAllSelection() {
@@ -80,7 +77,6 @@ export class ListComponent  implements OnInit{
     }
     this.allSelected = !this.allSelected;
     this.selectedRowsChanged.emit(this.selectedRows);
-    console.log('list', this.selectedRows)
   }
 
   updateAllSelectedStatus() {

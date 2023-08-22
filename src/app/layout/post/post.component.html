@@ -1,7 +1,7 @@
 <div class="grid">
     <button mat-raised-button class="app-selected" [disabled]= "selectedRows.length===0" (click)="sendSelectedRows()">Ir a detalles</button>
     <app-search (searchValueChanged)="onSearchValueChange($event)" class="app-search"></app-search>
-    <app-list (selectedRowsChanged)="onSelectedRowsChange($event)" class="app-list"></app-list>
+    <app-list  (selectedRowsChanged)="onSelectedRowsChange($event)" class="app-list"></app-list>
     <app-detail class="app-detail"></app-detail>
 </div>
 

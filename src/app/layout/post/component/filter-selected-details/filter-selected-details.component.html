@@ -8,9 +8,14 @@
              [formControl]="postControl"
              [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectPost($event.option.value)">
-        <mat-option *ngFor="let option of filteredPost" [value]="option">
-          {{option}}
+        <mat-option *ngIf="isLoading">
+          <mat-spinner  diameter="40"></mat-spinner>
         </mat-option>
+        <ng-container *ngIf="!isLoading">
+          <mat-option  *ngFor="let option of filteredPost" [value]="option">
+            {{option}}
+          </mat-option>
+        </ng-container>
       </mat-autocomplete>
     </mat-form-field>
   </form>
