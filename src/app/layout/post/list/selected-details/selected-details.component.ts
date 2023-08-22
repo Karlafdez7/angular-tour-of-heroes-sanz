@@ -31,7 +31,7 @@ export class SelectedDetailsComponent implements OnInit{
   onDeleteRow(id: string){
     const idNumber = parseInt(id)
     this.listService.deleteById(idNumber).subscribe(() => {
-      this.selectedRows = this.selectedRows.filter(row => row.id !== idNumber);
+      this.renderSelectedRows = this.renderSelectedRows.filter(row => row.id !== idNumber);
       this.idRow = ''
     })
   }
