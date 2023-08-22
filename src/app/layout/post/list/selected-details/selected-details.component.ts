@@ -32,6 +32,7 @@ export class SelectedDetailsComponent implements OnInit{
     const idNumber = parseInt(id)
     this.listService.deleteById(idNumber).subscribe(() => {
       this.renderSelectedRows = this.renderSelectedRows.filter(row => row.id !== idNumber);
+      this.selectedRows= this.selectedRows.filter(row => row.id !== idNumber)
       this.idRow = ''
     })
   }
