@@ -38,7 +38,6 @@ export class VehicleComponent {
   }
 
   handleSearch(value: string | '') {
-    console.log('handleSearch', value)
     
       const filterValue = value.toLowerCase();
       const nameVehicleApi = this.vehicleApi.map(item => item.name)
@@ -48,22 +47,25 @@ export class VehicleComponent {
       } else {
         this.results = []
       }
-      
-    // clearTimeout(this.typingTimer);
-    // if (value !== '') {
-    //   this.typingTimer = setTimeout(() => {
-    //     this.vehicleService.searchProduct(value).pipe(toArray()).subscribe(
-    //       products => {
-    //         this.products = products[0];
-    //         this.productsList = products[0].map(device => device.reference);
-    //       },
-    //       error => console.warn(error.error.message)
-    //     )
-    //   }, 500);
-    // } else {
-    //   this.products = [];
-    //   this.productsList = [];
-    // }
+          
+  }
+
+  filterSelectedItem(item: any) {
+    if (item) {
+      // Filtrar los detalles seleccionados basados en el valor del filtro
+      const filterSelectedItem = this.vehicleApi.filter(row =>
+        row.name.toLowerCase().includes(item.toLowerCase())
+      );
+        if(filterSelectedItem.length > 0 ){
+          this.dataSource = filterSelectedItem;
+        } else{
+          this.dataSource= [];
+        }
+    }
+  }
+
+  handleEvent(item: any){
+    this.filterSelectedItem(item);
   }
 
 

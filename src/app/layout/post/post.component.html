@@ -1,7 +1,14 @@
 <div class="grid">
     <button mat-raised-button class="app-selected" [disabled]= "selectedRows.length===0" (click)="sendSelectedRows()">Ir a detalles</button>
-    <app-search (searchValueChanged)="onSearchValueChange($event)" class="app-search"></app-search>
-    <app-list  (selectedRowsChanged)="onSelectedRowsChange($event)" class="app-list"></app-list>
+    <!-- <app-search (searchValueChanged)="onSearchValueChange($event)" class="app-search"></app-search> -->
+    <!-- <app-search-bar #searchBar placeholder="Buscar post"></app-search-bar> -->
+    <app-search-bar 
+        placeholder="Buscar post"
+        (getValue)="handleSearch($event)"
+        (itemClicked)="handleEvent($event)"
+        [results]="results"
+    ></app-search-bar>
+    <app-list [filterItem]="filterItem" (selectedRowsChanged)="onSelectedRowsChange($event)" class="app-list"></app-list>
     <app-detail class="app-detail"></app-detail>
 </div>
 

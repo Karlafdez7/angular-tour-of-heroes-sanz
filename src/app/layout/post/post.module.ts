@@ -17,7 +17,7 @@ import { ViewPostComponent } from './list/detail/view-post/view-post.component';
 import { EditPostComponent } from './list/detail/edit-post/edit-post.component';
 import { PostDataSectionComponent } from './component/post-data-section/post-data-section.component';
 import { EditDataSectionComponent } from './component/edit-data-section/edit-data-section.component';
-import { SearchComponent } from './component/search/search.component';
+import { SearchBarModule } from '../search-bar/search-bar.module';
 
 
 @NgModule({
@@ -29,8 +29,6 @@ import { SearchComponent } from './component/search/search.component';
     PostDataSectionComponent,
     EditDataSectionComponent,
     DetailComponent,
-    SearchComponent,
-
   ],
   imports: [
     CommonModule,
@@ -41,7 +39,7 @@ import { SearchComponent } from './component/search/search.component';
     MatCheckboxModule,
     MatButtonModule,
     MatRadioModule,
-    
+    SearchBarModule,
   ]
 })
 export class PostModule { }

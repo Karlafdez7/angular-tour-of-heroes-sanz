@@ -19,8 +19,9 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
+// import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MatTableModule } from '@angular/material/table';
+import { SearchBarModule } from './search-bar/search-bar.module';
 
 
 
@@ -35,7 +36,7 @@ import { MatTableModule } from '@angular/material/table';
     SelectedDetailsComponent,
     FilterSelectedDetailsComponent,
     VehicleComponent,
-    SearchBarComponent,
+    // SearchBarComponent,
   ],
   imports: [
     CommonModule,
@@ -49,6 +50,7 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatTableModule,
+    SearchBarModule,
   ]
 })
 export class LayoutModule { }

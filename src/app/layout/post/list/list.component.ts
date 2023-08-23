@@ -13,9 +13,10 @@ import { ListService } from '../../../list.service';
 export class ListComponent  implements OnInit{
   
   @Input() searchInput!: string;
+  @Input() filterItem!: listModel[]
   listApi: listModel[] = [];
   displayedColumns: string[] = ['selectAll','id', 'title'];
-  dataSource: listModel[] = [];
+  dataSource: listModel[] = this.listApi;
   
 
   @Output() selectedRowsChanged = new EventEmitter<listModel[]>();
@@ -32,7 +33,10 @@ export class ListComponent  implements OnInit{
     //   this.listApi = list;
     //   this.dataSource = list;
     // });
+    
+    
     this.loadListData();
+    
   }
 
   loadListData() {
@@ -87,9 +91,9 @@ export class ListComponent  implements OnInit{
     return this.selectedRows.indexOf(element) !== -1;
   }
 
-  applyFilter(value: string) {
-    value = value.trim().toLowerCase(); // Convertir a minúsculas y eliminar espacios en blanco
-    this.dataSource = this.listApi.filter(item => item.title.toLowerCase().includes(value));
-  }  
+  // applyFilter(value: string) {
+  //   value = value.trim().toLowerCase(); // Convertir a minúsculas y eliminar espacios en blanco
+  //   this.dataSource = this.listApi.filter(item => item.title.toLowerCase().includes(value));
+  // }  
 
 }

@@ -1,5 +1,5 @@
 <form class="wrapper">
-    <i class="icon-lupa unactiveIcon icon"></i>
+    <i class="fa-solid fa-magnifying-glass icon-lupa unactiveIcon icon"></i>
     <input
       type="text"
       class="input"
@@ -8,14 +8,14 @@
       [formControl]="searchField"
     />
     <button [@fadeInOut] class="button defaultIcon" (click)="delete()">
-      <i class="icon-x"></i>
+      <i class="icon-x fa-solid fa-x"></i>
     </button>
   </form>
   <div class="p-relative">
     <ul class="result-list" *ngIf="showResults">
       <ng-container *ngFor="let item of results; let index = index">
-        <li>
-          {{ item.name }}
+        <li (click)="onClickAction(item)">
+          {{ item }}
         </li>
         <!-- <li *ngIf="showListFull && listName === 'vehicle'">
           <p>{{ item.name }}</p>

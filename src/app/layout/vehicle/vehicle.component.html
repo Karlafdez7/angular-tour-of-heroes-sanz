@@ -1,6 +1,7 @@
 <app-search-bar 
     placeholder="Buscar vehículo" 
     (getValue)="handleSearch($event)"
+    (itemClicked)="handleEvent($event)"
     [results]="results"
 >
 
