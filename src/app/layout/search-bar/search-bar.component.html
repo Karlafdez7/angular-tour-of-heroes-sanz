@@ -1,1 +1,31 @@
-<p>search-bar works!</p>
+<form class="wrapper">
+    <i class="icon-lupa unactiveIcon icon"></i>
+    <input
+      type="text"
+      class="input"
+      (input)="onSearchValueChange()"
+      [placeholder]="placeholder"
+      [formControl]="searchField"
+    />
+    <button [@fadeInOut] class="button defaultIcon" (click)="delete()">
+      <i class="icon-x"></i>
+    </button>
+  </form>
+  <div class="p-relative">
+    <ul class="result-list" *ngIf="showResults">
+      <ng-container *ngFor="let item of results; let index = index">
+        <li>
+          {{ item.name }}
+        </li>
+        <!-- <li *ngIf="showListFull && listName === 'vehicle'">
+          <p>{{ item.name }}</p>
+        </li> -->
+        <!-- <li (click)="onClickAction(index)" *ngIf="!showListFull && listName === 'post'">
+            {{ item.title }}
+          </li>
+          <li (click)="onClickAction(index)" *ngIf="showListFull && listName === 'vehicle'">
+            <p>{{ item.name }}</p>
+          </li> -->
+      </ng-container>
+    </ul>
+  </div>

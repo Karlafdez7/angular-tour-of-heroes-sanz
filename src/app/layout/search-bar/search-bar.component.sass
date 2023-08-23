@@ -1,0 +1,84 @@
+:host   
+  position: relative 
+  
+
+.wrapper   
+  width: calc(100% - 30px) 
+  height: 50px 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) 
+  display: flex 
+  align-items: center 
+  margin: 15px 
+  border-radius: 2px 
+  
+
+.input   
+  width: 100% 
+  margin: 0 15px 
+  font-size: 1rem 
+  font-family: myriad 
+  border: 0 
+  
+
+.icon   
+  padding-left: 15px 
+  
+
+.button   
+  padding-right: 15px 
+  
+
+.icon-lupa   
+  font-size: 1.125rem 
+  
+
+.result-list   
+  width: calc(100% - 30px) 
+  display: flex 
+  flex-direction: column 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) 
+  border-bottom-left-radius: 2px 
+  border-bottom-right-radius: 2px 
+  margin: 0 15px 
+  position: absolute 
+  overflow: auto 
+  top: -15px 
+  z-index: 1 
+  max-height: 300px 
+  background-color: white 
+
+  li   
+    padding: 10px 15px 
+    border-bottom: 1px solid #d8d8d8 
+
+    &:last-child   
+      border-bottom: none 
+      
+
+    &:hover   
+      background-color: #dadada 
+      
+    
+  
+
+@media only screen and (min-width: 600px)   
+  .result-list   
+    top: -15px 
+    
+  
+
+@media only screen and (min-width: 960px)   
+  .result-list   
+    margin: 0 40px 
+    width: 300px 
+    top: -18px 
+    
+  .wrapper   
+    width: calc(100% - 80px) 
+    margin: 20px 40px 
+    
+  
+
+.p-relative   
+  position: relative 
+  

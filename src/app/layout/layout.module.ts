@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -47,6 +48,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatTableModule,
   ]
 })
 export class LayoutModule { }
