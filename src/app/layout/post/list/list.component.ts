@@ -23,6 +23,7 @@ export class ListComponent  implements OnInit{
 
   selectedRows: listModel[] = [];
   allSelected: boolean = false;
+  results: string[] = []
   
   constructor(private listService: ListService, private route: ActivatedRoute, private router : Router){
 
@@ -95,5 +96,31 @@ export class ListComponent  implements OnInit{
   //   value = value.trim().toLowerCase(); // Convertir a minúsculas y eliminar espacios en blanco
   //   this.dataSource = this.listApi.filter(item => item.title.toLowerCase().includes(value));
   // }  
+
+  applyFilter(value: string){
+    const filterValue = value.toLowerCase();
+    const titleListApi = this.listApi.map(item => item.title)
+    // this.isLoading=false;
+    if(value !== ''){
+      this.results = titleListApi.filter(option => option.toLowerCase().includes(filterValue));
+    } else {
+      this.results = []
+    }
+    console.log('handleSearch', value, this.results, filterValue, titleListApi)
+  }
+
+  filterSelectedItem(item: any) {
+    if (item) {
+      // Filtrar los detalles seleccionados basados en el valor del filtro
+      const filterSelectedItem = this.listApi.filter(row =>
+        row.title.toLowerCase().includes(item.toLowerCase())
+      );
+        if(filterSelectedItem.length > 0 ){
+          this.dataSource = filterSelectedItem;
+        } else{
+          this.dataSource= [];
+        }
+    }
+  }
 
 }

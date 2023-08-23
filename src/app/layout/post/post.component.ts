@@ -41,35 +41,15 @@ export class PostComponent {
   }
   
   handleSearch(value: string | '') {
-    
-    const filterValue = value.toLowerCase();
-    const titleListApi = this.listApi.map(item => item.title)
-    // this.isLoading=false;
-    if(value !== ''){
-      this.results = titleListApi.filter(option => option.toLowerCase().includes(filterValue));
-    } else {
-      this.results = []
-    }
-    console.log('handleSearch', value, this.results, filterValue, titleListApi)
+    this.listComponent.applyFilter(value)
+    this.results = this.listComponent.results
         
-}
-
-filterSelectedItem(item: any) {
-  if (item) {
-    // Filtrar los detalles seleccionados basados en el valor del filtro
-    const filterSelectedItem = this.listApi.filter(row =>
-      row.title.toLowerCase().includes(item.toLowerCase())
-    );
-      if(filterSelectedItem.length > 0 ){
-        this.filterItem = filterSelectedItem;
-      } else{
-        this.filterItem= [];
-      }
   }
-}
+
+
 
 handleEvent(item: any){
-  this.filterSelectedItem(item);
+  this.listComponent.filterSelectedItem(item);
 }
 
 }
