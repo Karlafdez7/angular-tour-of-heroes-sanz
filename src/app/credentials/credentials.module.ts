@@ -8,13 +8,15 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
+import { CarouselCredentialsComponent } from './carousel-credentials/carousel-credentials.component';
 
 
 @NgModule({
   declarations: [
     CredentialsComponent,
     LoginComponent,
-    NewProfileComponent
+    NewProfileComponent,
+    CarouselCredentialsComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { NewProfileComponent } from './new-profile/new-profile.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
     ]
 })
 export class CredentialsModule { }
