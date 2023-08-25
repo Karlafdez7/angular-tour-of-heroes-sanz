@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
-    "angular-carousel": "^1.1.0",
+    "@ngu/carousel": "^8.0.0",
     "ngx-webstorage-service": "^5.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

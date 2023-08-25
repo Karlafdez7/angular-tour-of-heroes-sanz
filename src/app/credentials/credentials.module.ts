@@ -8,7 +8,6 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
-import { CarouselCredentialsComponent } from './carousel-credentials/carousel-credentials.component';
 
 
 @NgModule({
@@ -16,7 +15,7 @@ import { CarouselCredentialsComponent } from './carousel-credentials/carousel-cr
     CredentialsComponent,
     LoginComponent,
     NewProfileComponent,
-    CarouselCredentialsComponent
+    
   ],
   imports: [
     CommonModule,
@@ -25,7 +24,8 @@ import { CarouselCredentialsComponent } from './carousel-credentials/carousel-cr
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    
-    ]
+    ],
+
+
 })
 export class CredentialsModule { }
