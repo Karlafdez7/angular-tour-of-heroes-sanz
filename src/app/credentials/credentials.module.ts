@@ -15,7 +15,6 @@ import { NewProfileComponent } from './new-profile/new-profile.component';
     CredentialsComponent,
     LoginComponent,
     NewProfileComponent,
-    
   ],
   imports: [
     CommonModule,

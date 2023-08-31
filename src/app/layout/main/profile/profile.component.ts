@@ -12,7 +12,7 @@ export class ProfileComponent {
   @Input() email!: string;
   selectedRoute!: string;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router) {
     this.updateSelectedRoute(this.router.url); // Inicializar selectedRoute con la ruta actual al cargar el componente
 
     // Suscripción a eventos de navegación para actualizar selectedRoute al cambiar la ruta

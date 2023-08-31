@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 import vehicleModel from 'src/app/vehicleModel';
 import { VehicleService } from '../../vehicle.service';

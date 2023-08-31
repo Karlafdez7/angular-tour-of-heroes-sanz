@@ -31,18 +31,18 @@ export class ListService {
   getListData(): Observable<listModel[]> {
     const storedData = localStorage.getItem('listData');
 
-    if (storedData) {
+    /*if (storedData) {
       this.listApi = JSON.parse(storedData);
       return of(this.listApi);
 
-    } else {
+    } else {*/
       return this.http.get<listModel[]>(this.urlapi).pipe(
         tap(apiData => {
           this.listApi = apiData;
           localStorage.setItem('listData', JSON.stringify(apiData)); // Save in localStorage
         })
       );
-    }
+    //}
   }
 
 }
