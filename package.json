@@ -6,7 +6,8 @@
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --no-watch --browsers=ChromeHeadless",
+    "coverage": "ng test --no-watch --browsers=ChromeHeadless --code-coverage"
   },
   "private": true,
   "dependencies": {
@@ -22,13 +23,14 @@
     "@angular/router": "^16.1.0",
     "@ngu/carousel": "^8.0.0",
     "ngx-webstorage-service": "^5.0.0",
+    "puppeteer": "^21.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.1.5",
-    "@angular/cli": "~16.1.5",
+    "@angular-devkit/build-angular": "^16.2.1",
+    "@angular/cli": "~16.2.1",
     "@angular/compiler-cli": "^16.1.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",

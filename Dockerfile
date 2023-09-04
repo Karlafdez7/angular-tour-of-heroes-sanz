@@ -1,4 +1,6 @@
 FROM node:17-alpine
+RUN apk add chromium
+ENV CHROME_BIN=/usr/bin/chromium-browser
 WORKDIR /ng-app
 COPY package* /ng-app/
 COPY . .
